@@ -32,7 +32,7 @@ export default function Portfolio() {
     // Navbar offset (height of AppBar). Tune if your AppBar is taller/shorter.
     const NAVBAR_OFFSET = 74; // px
     const [activeSection, setActiveSection] = useState("home");
-    const [activeLanguage, setActiveLanguage] = useState("EN");
+    const [activeLanguage, setActiveLanguage] = useState(i18n.language.split('-')[0].toUpperCase());
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
