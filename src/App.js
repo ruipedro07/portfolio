@@ -5,13 +5,13 @@ import {
     Button,
     Typography,
     Box,
-    Container,
     Chip,
     Stack, MenuItem, Menu,
 } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+import Section from "./section";
+import ExperienceTimeline from "./ExperienceTimeline";
 
 
 const sections = ["Home", "About", "Projects", "Skills", "Experience", "Contact"];
@@ -26,9 +26,8 @@ const projects = [
 ];
 
 
-
 export default function Portfolio() {
-    const { t, i18n } = useTranslation();
+    const {t, i18n} = useTranslation();
     // Navbar offset (height of AppBar). Tune if your AppBar is taller/shorter.
     const NAVBAR_OFFSET = 74; // px
     const [activeSection, setActiveSection] = useState("home");
@@ -122,27 +121,27 @@ export default function Portfolio() {
                     backdropFilter: "blur(8px)",
                 }}
             >
-                <Toolbar sx={{minHeight: "unset", display: "flex", alignItems: "center",  justifyContent: "center"}}>
-                        {sections.map((section) => (
-                            <Button
-                                key={section}
-                                onClick={() => scrollToId(section.toLowerCase())}
-                                sx={{
-                                    mx: 1,
-                                    borderRadius: "999px",
-                                    textTransform: "none",
-                                    color: activeSection === section.toLowerCase() ? "#ffffff" : "#acacac",
-                                    bgcolor: activeSection === section.toLowerCase() ? "#202020" : "transparent",
-                                    "&:hover": {
-                                        bgcolor: activeSection === section.toLowerCase()
-                                            ? "white"
-                                            : "rgba(255,255,255,0.15)",
-                                    },
-                                }}
-                            >
-                                {t(section)}
-                            </Button>
-                        ))}
+                <Toolbar sx={{minHeight: "unset", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    {sections.map((section) => (
+                        <Button
+                            key={section}
+                            onClick={() => scrollToId(section.toLowerCase())}
+                            sx={{
+                                mx: 1,
+                                borderRadius: "999px",
+                                textTransform: "none",
+                                color: activeSection === section.toLowerCase() ? "#ffffff" : "#acacac",
+                                bgcolor: activeSection === section.toLowerCase() ? "#202020" : "transparent",
+                                "&:hover": {
+                                    bgcolor: activeSection === section.toLowerCase()
+                                        ? "white"
+                                        : "rgba(255,255,255,0.15)",
+                                },
+                            }}
+                        >
+                            {t(section)}
+                        </Button>
+                    ))}
                     {/* Language dropdown */}
                     <Button
                         onClick={handleClick}
@@ -171,8 +170,8 @@ export default function Portfolio() {
                         anchorEl={anchorEl}
                         open={open}
                         onClose={() => handleClose(null)}
-                        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-                        transformOrigin={{ vertical: "top", horizontal: "center" }}
+                        anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                        transformOrigin={{vertical: "top", horizontal: "center"}}
                         PaperProps={{
                             sx: {
                                 display: "flex",             // horizontal layout
@@ -208,78 +207,58 @@ export default function Portfolio() {
             {/* Offset for fixed AppBar */}
             <Toolbar/>
 
-            {/* Home */}
-            <Box id="home" sx={{minHeight: "100vh", py: 10, backgroundColor: "#ffffff"}}>
-                <Container maxWidth="md">
-                    <Typography variant="h3" gutterBottom>
-                        {t("Home")}
-                    </Typography>
-                    <Typography variant="body1">
-                        {t("welcome")}
-                    </Typography>
-                </Container>
-            </Box>
 
-            {/* About */}
-            <Box id="about" sx={{minHeight: "80vh", py: 10, backgroundColor: "#ffffff"}}>
-                <Container maxWidth="md">
-                    <Typography variant="h3" gutterBottom>
-                        {t("About")}
-                    </Typography>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "column", // vertical stacking
+                    width: "100%",            // make sure it spans full width
+                }}
+            >
+
+                <Section id="home" title={t("Home")}>
+                    <Typography variant="body1">{t("welcome")}</Typography>
+                </Section>
+
+
+                {/* About */}
+                <Section id="about" title={t("About")}>
                     <Typography variant="body1"> {t("aboutMe")}</Typography>
-                </Container>
-            </Box>
+                </Section>
 
-            {/* Projects */}
-            <Box id="projects" sx={{minHeight: "100vh", py: 10, backgroundColor: "#ffffff"}}>
-                <Container maxWidth="md">
-                    <Typography variant="h3" gutterBottom>
-                        {t("Projects")}
-                    </Typography>
-                    <Typography variant="body2" sx={{mb: 2, opacity: 0.8}}>
-                        TODO
-                    </Typography>
 
-                </Container>
-            </Box>
+                {/* Projects */}
+                <Section id="projects" title={t("Projects")}>
+                    <Typography variant="body1">TODO</Typography>
+                </Section>
 
-            {/* Skills */}
-            <Box id="skills" sx={{minHeight: "80vh", py: 10, backgroundColor: "#ffffff"}}>
-                <Container maxWidth="md">
-                    <Typography variant="h3" gutterBottom>
-                        {t("Skills")}
-                    </Typography>
+
+                {/* Skills */}
+                <Section id="skills" title={t("Skills")}>
                     <Stack direction="row" spacing={1} flexWrap="wrap">
                         {["React", "TypeScript", "Node.js", "Three.js", "MUI", "Postgres", "Docker"].map((s) => (
                             <Chip key={s} label={s} sx={{fontWeight: 600}}/>
                         ))}
                     </Stack>
-                </Container>
-            </Box>
+                </Section>
 
-            {/* Experience */}
-            <Box id="experience" sx={{minHeight: "80vh", py: 10, backgroundColor: "#ffffff"}}>
-                <Container maxWidth="md">
-                    <Typography variant="h3" gutterBottom>
-                        {t("Experience")}
-                    </Typography>
-                    <Typography variant="body1">
-                        TODO
-                    </Typography>
-                </Container>
-            </Box>
 
-            {/* Contact */}
-            <Box id="contact" sx={{minHeight: "70vh", py: 10, backgroundColor: "#ffffff"}}>
-                <Container maxWidth="md">
-                    <Typography variant="h3" gutterBottom>
-                        {t("Contact")}
-                    </Typography>
+                {/* Experience */}
+                <Section id="experience" title={t("Experience")}>
+                    <ExperienceTimeline></ExperienceTimeline>
+                </Section>
+
+
+                {/* Contact */}
+                <Section id="contact" title={t("Contact")}>
                     <Typography variant="body1">
                         {t("contactMe")}
                     </Typography>
-                </Container>
+                </Section>
+
+
             </Box>
         </>
-    );
+    )
+        ;
 }
