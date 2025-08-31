@@ -16,3 +16,31 @@
                   </Card>
               ))}
             </Stack>
+
+
+
+
+
+      {/* Background texture at the top */}
+                 <Box sx={{position: "relative", width: "100%"}}>
+                     {/* Texture background */}
+                     <Box
+                         sx={{
+                             position: "absolute",
+                             top: -70,
+                             left: 0,
+                             right: 0,
+                             height: 1000, // adjust height
+                             backgroundImage: `
+                                          linear-gradient(to bottom, rgba(255,255,255,0) 20%, white 100%),
+                                           url('/3d-rendering-abstract-black-white-background.jpg')
+                                      `,
+                             backgroundRepeat: "no-repeat",
+                             backgroundSize: "cover",
+                             backgroundPosition: "top",
+                             zIndex: 0,
+                             opacity: 0.3,
+                         }}
+                     />
+
+                 </Box>
