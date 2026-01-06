@@ -25,7 +25,7 @@ export default function Navbar() {
     const {t, i18n} = useTranslation();
     // Navbar offset (height of AppBar). Tune if your AppBar is taller/shorter.
     const NAVBAR_OFFSET = 74; // px
-    const [activeSection, setActiveSection] = useState("home");
+    const [activeSection, setActiveSection] = useState("");
     const [activeLanguage, setActiveLanguage] = useState(i18n.language.split('-')[0].toUpperCase());
 
     const changeLanguage = (lng) => {
@@ -78,10 +78,12 @@ export default function Navbar() {
     }, []);
 
 
-    useEffect(() => {
+    /*useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
+                console.log(entries.map(e => e.target))
                 entries.forEach((entry) => {
+
                     if (entry.isIntersecting) {
                         setActiveSection(entry.target.id);
                     }
@@ -95,8 +97,12 @@ export default function Navbar() {
             if (el) observer.observe(el);
         });
 
+
+
+
+
         return () => observer.disconnect();
-    }, []);
+    }, []);*/
 
 
     return (
