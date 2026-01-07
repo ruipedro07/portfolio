@@ -1,5 +1,10 @@
 import {
-     SET_FORM_NAME, SET_FORM_MESSAGE, SET_FORM_EMAIL, SET_FORM_SUBMIT_SUCCESS
+    SET_FORM_NAME,
+    SET_FORM_MESSAGE,
+    SET_FORM_EMAIL,
+    SET_FORM_SUBMIT_SUCCESS,
+    SUBMIT_CONTACT_FORM,
+    SET_FORM_ERROR_MESSAGE
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -7,7 +12,8 @@ const initialState = {
     email: "",
     message: "",
     submitSuccess: false,
-    formSubmitError: ""
+    formSubmitError: "",
+    loading : false
 };
 
 const portefolioReducer = (state = initialState, action) => {
@@ -31,6 +37,23 @@ const portefolioReducer = (state = initialState, action) => {
             return {
                 ...state,
                 submitSuccess: true,
+                formSubmitError: "",
+                loading: false,
+                name: "",
+                email: "",
+                message: "",
+            };
+        case SUBMIT_CONTACT_FORM:
+            return {
+                ...state,
+                loading: true,
+            };
+        case SET_FORM_ERROR_MESSAGE:
+            return {
+                ...state,
+                submitSuccess: false,
+                formSubmitError: action.payload,
+                loading: false,
             };
         default:
             return state;

@@ -34,10 +34,11 @@ export default function Section({
                         sx={{
                             position: "relative",
 
-                            fontSize: { xs: "3rem", md: "5rem" },
+                            fontSize: { xs: "3rem", md: "4rem" },
                             fontWeight: "bold",
                         }}
                     >
+                        {/*"div<"+ title + ">" TODO*/}
                         {title}
                     </Typography>
                 </Box>

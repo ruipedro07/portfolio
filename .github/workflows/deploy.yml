@@ -14,14 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build Docker image locally
+      - name: Set environment variables
         run: |
-          docker build -t portfolio:latest .
+          echo "EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> $GITHUB_ENV
+        
+      - name: Stop existing Docker Compose services
+        run: docker-compose down || true
 
-      - name: Stop existing container (if running)
-        run: |
-          docker rm -f react-app || true
-
-      - name: Run Docker container
-        run: |
-          docker run -d --name react-app -p 8083:80 portfolio:latest
+      - name: Build and start Docker Compose
+        run: docker-compose up --build -d

@@ -1,5 +1,10 @@
 import {
-    SET_FORM_NAME, SET_FORM_EMAIL, SET_FORM_MESSAGE, SET_FORM_SUBMIT_SUCCESS, SUBMIT_CONTACT_FORM
+    SET_FORM_NAME,
+    SET_FORM_EMAIL,
+    SET_FORM_MESSAGE,
+    SET_FORM_SUBMIT_SUCCESS,
+    SUBMIT_CONTACT_FORM,
+    SET_FORM_ERROR_MESSAGE
 } from "./actionTypes";
 
 
@@ -25,6 +30,11 @@ export const submitContactForm = (data) => ({
 
 export const setFormSubmitSuccess = () => ({
     type: SET_FORM_SUBMIT_SUCCESS,
+});
+
+export const setFormErrorMessage = (data) => ({
+    type: SET_FORM_ERROR_MESSAGE,
+    payload: data,
 });
 
 

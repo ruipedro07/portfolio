@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="changed contact email">
+      <change afterPath="$PROJECT_DIR$/../email/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portefolio.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/3d-rendering-abstract-black-white-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/white-texture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ExperienceTimeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/actions/actionTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/actions/portefolioActions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/experience.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/i18n.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/reducers/portefolioReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/rootSaga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/sagas/portefolioSaga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/section.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/theme.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="experience-timeline" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="31z77MKsN4R2TywcSdTTnpBrib8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/12659/Documents/portefolio/portefolio-front",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.npm start.executor": "Run",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.4.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\12659\Documents\portefolio\src\actions" />
+      <recent name="C:\Users\12659\Documents\portefolio\src\reducers" />
+      <recent name="C:\Users\12659\Documents\portefolio\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="" />
+      <created>1756514880711</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756514880711</updated>
+      <workItem from="1756514882241" duration="1370000" />
+      <workItem from="1756552185250" duration="6541000" />
+      <workItem from="1756560841180" duration="3359000" />
+      <workItem from="1756576765249" duration="1883000" />
+      <workItem from="1756589855237" duration="646000" />
+      <workItem from="1756594996292" duration="5556000" />
+      <workItem from="1756634349552" duration="5361000" />
+      <workItem from="1756644675226" duration="5036000" />
+      <workItem from="1756658315053" duration="47000" />
+      <workItem from="1756658386416" duration="136000" />
+      <workItem from="1756766728729" duration="151000" />
+      <workItem from="1756852007648" duration="226000" />
+      <workItem from="1762002493639" duration="2103000" />
+      <workItem from="1762607755724" duration="1232000" />
+      <workItem from="1762611417102" duration="789000" />
+      <workItem from="1765031310082" duration="3955000" />
+      <workItem from="1765047328657" duration="4988000" />
+      <workItem from="1765120238040" duration="686000" />
+      <workItem from="1765200396704" duration="933000" />
+      <workItem from="1767556859021" duration="5619000" />
+      <workItem from="1767656188125" duration="4508000" />
+      <workItem from="1767737282078" duration="577000" />
+      <workItem from="1767737943850" duration="50000" />
+      <workItem from="1767738011539" duration="17000" />
+      <workItem from="1767738046461" duration="104000" />
+      <workItem from="1767738167837" duration="91000" />
+      <workItem from="1767738287036" duration="164000" />
+      <workItem from="1767738462943" duration="6307000" />
+    </task>
+    <task id="LOCAL-00001" summary="Dockerfile">
+      <option name="closed" value="true" />
+      <created>1756561970213</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1756561970213</updated>
+    </task>
+    <task id="LOCAL-00002" summary="removed the disptach when pushed to main branch">
+      <option name="closed" value="true" />
+      <created>1756563061090</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756563061090</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed language bug">
+      <option name="closed" value="true" />
+      <created>1756566165306</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756566165306</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changed page title and favicon">
+      <option name="closed" value="true" />
+      <created>1756577848424</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756577848424</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Start of experience timeline">
+      <option name="closed" value="true" />
+      <created>1756646006552</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756646006552</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finished experience timeline">
+      <option name="closed" value="true" />
+      <created>1756649005354</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756649005354</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changed contact email">
+      <option name="closed" value="true" />
+      <created>1756766875912</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756766875912</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dockerfile" />
+    <MESSAGE value="Update Dockerfile" />
+    <MESSAGE value="removed the disptach when pushed to main branch" />
+    <MESSAGE value="Fixed language bug" />
+    <MESSAGE value="Changed page title and favicon" />
+    <MESSAGE value="Start of experience timeline" />
+    <MESSAGE value="finished experience timeline" />
+    <MESSAGE value="changed contact email" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed contact email" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
