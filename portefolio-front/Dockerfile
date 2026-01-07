@@ -14,6 +14,8 @@ RUN npm install -g npm@11.5.2
 RUN npm install --legacy-peer-deps
 
 COPY . .
+ARG REACT_APP_API_HOST
+ENV REACT_APP_API_HOST=$REACT_APP_API_HOST
 RUN npm run build
 
 # Fase de runtime
