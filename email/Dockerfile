@@ -8,8 +8,6 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-ARG EMAIL_PASSWORD
-ENV EMAIL_PASSWORD=$EMAIL_PASSWORD
 
 # Install system dependencies (optional but common)
 RUN apt-get update && apt-get install -y \
