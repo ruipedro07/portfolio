@@ -9,7 +9,7 @@ services:
       - EMAIL_PASSWORD=${EMAIL_PASSWORD}
       - CORS_ORIGINS=https://ruiribeiro.dev,https://www.ruiribeiro.dev
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     restart: unless-stopped
 
   frontend:
@@ -19,7 +19,7 @@ services:
         REACT_APP_API_HOST: /api
     container_name: react-frontend
     ports:
-      - "8083:80"
+      - "127.0.0.1:8083:80"
     depends_on:
       - backend
     restart: unless-stopped
