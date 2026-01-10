@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 
-app = FastAPI()
+app = FastAPI(root_path="/api")
 
 # Allow frontend (localhost:3000 if React dev server)
 app.add_middleware(

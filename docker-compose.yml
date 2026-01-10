@@ -15,7 +15,7 @@ services:
     build:
       context: ./portefolio-front
       args:
-        REACT_APP_API_HOST: http://backend:8000
+        REACT_APP_API_HOST: /api
     container_name: react-frontend
     ports:
       - "8083:80"
