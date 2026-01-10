@@ -7,7 +7,6 @@ services:
     container_name: fastapi-backend
     environment:
       - EMAIL_PASSWORD=${EMAIL_PASSWORD}
-      - CORS_ORIGINS=https://ruiribeiro.dev,https://www.ruiribeiro.dev
     ports:
       - "127.0.0.1:8000:8000"
     restart: unless-stopped

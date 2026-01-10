@@ -20,7 +20,11 @@ async function submitContactForm(action) {
             }).toString(),
         });
 
-        store.dispatch(setFormSubmitSuccess());
+        if (response.ok) {
+            store.dispatch(setFormSubmitSuccess());
+        } else {
+            store.dispatch(setFormErrorMessage(`Server responded with ${response.status}`));
+        }
 
     } catch (error) {
         store.dispatch(setFormErrorMessage("No reply from server"));
