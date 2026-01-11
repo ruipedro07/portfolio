@@ -1,12 +1,9 @@
 import React from "react";
 import {
-
     Typography,
     Box,
     Chip,
     Stack,
-    TextField,
-    Button, CircularProgress
 } from "@mui/material";
 import {useTranslation} from "react-i18next";
 import Section from "./section";
@@ -17,8 +14,6 @@ import {
     SET_FORM_EMAIL, SET_FORM_MESSAGE, SET_FORM_NAME, SUBMIT_CONTACT_FORM,
 
 } from "./actions/actionTypes";
-import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
 import Contact from "./contact";
 
 
@@ -94,6 +89,7 @@ const Portfolio = ({
                 <Section id="contact" title={t("Contact")}>
                     <Contact
                         {...{
+                            formSubmitError,
                             submitSuccess,
                             name,
                             email,

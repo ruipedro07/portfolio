@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Box, Button, CircularProgress, TextField} from "@mui/material";
+import { Box, Button, CircularProgress, TextField, Typography, Link } from "@mui/material";
 import Alert from "@mui/material/Alert";
-
 
 export default function Contact({
                                     formSubmitError,
@@ -16,46 +15,60 @@ export default function Contact({
                                     submitContactForm
                                 }) {
 
+    console.log("submitSuccess", submitSuccess)
+    console.log("formSubmitError", formSubmitError)
+
     return (
         <Box
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
                 width: '100%',
+                gap: 4, // space between columns
+                flexWrap: 'wrap', // for responsiveness
             }}
         >
+            {/* Left Column: Contact Info */}
             <Box
                 sx={{
+                    flex: 1,
+                    minWidth: '250px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-end', // aligns items to the right within this column
+                    gap: 2,
+                }}
+            >
+                <Typography variant="h5">Contact Info</Typography>
+                <Typography>Email: <Link href="mailto:contact@ruiribeiro.dev">contact@ruiribeiro.dev</Link></Typography>
+                <Typography>LinkedIn: <Link href="https://www.linkedin.com/in/ruiribeiro-dev/" target="_blank" rel="noopener">linkedin.com/in/ruiribeiro</Link></Typography>
+                <Typography>Phone: +351 915 257 742</Typography>
+                {/* Add more contact info as needed */}
+            </Box>
+
+            {/* Right Column: Contact Form */}
+            <Box
+                sx={{
+                    flex: 1,
+                    minWidth: '300px',
                     maxWidth: '500px',
-                    width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 2,
                 }}
             >
-                {submitSuccess && (<Alert
+                {submitSuccess && (
+                    <Alert severity="success" sx={{ width: '100%', px: 2, boxSizing: 'border-box' }}>
+                        Here is a gentle confirmation that your action was successful. <br/>
+                        You should receive a confirmation email within a few minutes.
+                    </Alert>
+                )}
 
-                    severity="success"
-                    sx={{
-                        width: '100%',
-                        px: 2,
-                        boxSizing: 'border-box',
-                    }}
-                >
-                    Here is a gentle confirmation that your action was successful. <br/>
-                    You should receive a confirmation email within a few minutes.
-                </Alert>)}
-
-                {formSubmitError && (<Alert
-                    severity="error"
-                    sx={{
-                        width: '100%',
-                        px: 2,
-                        boxSizing: 'border-box',
-                    }}
-                >
-                    {formSubmitError}
-                </Alert>)}
+                {formSubmitError && (
+                    <Alert severity="error" sx={{ width: '100%', px: 2, boxSizing: 'border-box' }}>
+                        {formSubmitError}
+                    </Alert>
+                )}
 
                 <Box
                     component="form"
@@ -67,7 +80,7 @@ export default function Contact({
                     }}
                 >
                     <TextField
-                        label={"Name"}
+                        label="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         name="name"
@@ -75,7 +88,7 @@ export default function Contact({
                     />
 
                     <TextField
-                        label={"Email"}
+                        label="Email"
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -84,7 +97,7 @@ export default function Contact({
                     />
 
                     <TextField
-                        label={"Message"}
+                        label="Message"
                         name="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
@@ -97,13 +110,9 @@ export default function Contact({
                         type="submit"
                         variant="contained"
                         disabled={loading}
-                        sx={{height: 40}}
+                        sx={{ height: 40 }}
                     >
-                        {loading ? (
-                            <CircularProgress size={24} color="inherit"/>
-                        ) : (
-                            "Send"
-                        )}
+                        {loading ? <CircularProgress size={24} color="inherit"/> : "Send"}
                     </Button>
                 </Box>
             </Box>
