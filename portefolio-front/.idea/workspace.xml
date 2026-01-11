@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="changed contact email">
-      <change beforePath="$PROJECT_DIR$/../email/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../email/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/portefolioSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/portefolioSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +126,8 @@
       <workItem from="1767738167837" duration="91000" />
       <workItem from="1767738287036" duration="164000" />
       <workItem from="1767738462943" duration="9169000" />
-      <workItem from="1768080679078" duration="2719000" />
+      <workItem from="1768080679078" duration="3314000" />
+      <workItem from="1768093991554" duration="858000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
