@@ -6,6 +6,7 @@ import {setFormErrorMessage, setFormSubmitSuccess} from "../actions/portefolioAc
 
 async function submitContactForm(action) {
 
+    console.log(action.payload)
     try {
 
         const response = await fetch(`${API_HOST}/contact`, {
