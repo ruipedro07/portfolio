@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="contact section done">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="mobile navbar">
+      <change afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,8 @@
       <workItem from="1767738462943" duration="9169000" />
       <workItem from="1768080679078" duration="3314000" />
       <workItem from="1768093991554" duration="1873000" />
-      <workItem from="1768131981667" duration="6391000" />
+      <workItem from="1768131981667" duration="6813000" />
+      <workItem from="1768163069442" duration="395000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -208,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768135738095</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="mobile navbar">
+      <option name="closed" value="true" />
+      <created>1768149862789</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768149862789</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +248,8 @@
     <MESSAGE value="contact form in separate js file" />
     <MESSAGE value="contact info" />
     <MESSAGE value="contact section done" />
-    <option name="LAST_COMMIT_MESSAGE" value="contact section done" />
+    <MESSAGE value="mobile navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile navbar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -15,6 +15,7 @@ import {
 
 } from "./actions/actionTypes";
 import Contact from "./contact";
+import Skills from "./skills";
 
 
 const Portfolio = ({
@@ -71,11 +72,7 @@ const Portfolio = ({
 
                 {/* Skills */}
                 <Section id="skills" title={t("Skills")}>
-                    <Stack direction="row" spacing={1} flexWrap="wrap">
-                        {/*["React", "TypeScript", "Node.js", "Three.js", "MUI", "Postgres", "Docker"]*/[].map((s) => (
-                            <Chip key={s} label={s} sx={{fontWeight: 600}}/>
-                        ))}
-                    </Stack>
+                    <Skills></Skills>
                 </Section>
 
 
