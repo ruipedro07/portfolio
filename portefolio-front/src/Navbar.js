@@ -3,10 +3,15 @@ import {
     AppBar,
     Toolbar,
     Button,
-    MenuItem, Menu,
+    MenuItem, Menu, useTheme,
 } from "@mui/material";
 import {useTranslation} from "react-i18next";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Box from "@mui/material/Box";
 
 
 const projects = [
@@ -43,6 +48,10 @@ export default function Navbar() {
         setAnchorEl(null);
         if (lang) changeLanguage(lang);
     };
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
     // Smooth scroll helper. Uses native APIs and accounts for fixed navbar.
     const scrollToId = (id) => {
@@ -106,105 +115,147 @@ export default function Navbar() {
 
 
     return (
-        <>{/* Navbar */}
-            <AppBar
-                position="fixed"
-                elevation={4}
-                sx={{
-                    top: 16,
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    width: "fit-content",
-                    borderRadius: 999, // pill shape
-                    px: 2,
-                    py: 0.5,
-                    background: "transparent",
-                    backdropFilter: "blur(8px)",
-                }}
-            >
-                <Toolbar sx={{minHeight: "unset", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                    {sections.map((section) => (
+        <>
+            {/* Navbar */}
+            {!isMobile && (
+                <AppBar
+                    position="fixed"
+                    elevation={4}
+                    sx={{
+                        top: 16,
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "fit-content",
+                        borderRadius: 999, // pill shape
+                        px: 2,
+                        py: 0.5,
+                        background: "transparent",
+                        backdropFilter: "blur(8px)",
+                    }}
+                >
+                    <Toolbar sx={{minHeight: "unset", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                        {sections.map((section) => (
+                            <Button
+                                key={section}
+                                onClick={() => scrollToId(section.toLowerCase())}
+                                sx={{
+                                    mx: 1,
+                                    borderRadius: "999px",
+                                    textTransform: "none",
+                                    color: activeSection === section.toLowerCase() ? "#ffffff" : "#acacac",
+                                    bgcolor: activeSection === section.toLowerCase() ? "#202020" : "transparent",
+                                    "&:hover": {
+                                        bgcolor: activeSection === section.toLowerCase()
+                                            ? "white"
+                                            : "rgba(255,255,255,0.15)",
+                                    },
+                                }}
+                            >
+                                {t(section)}
+                            </Button>
+                        ))}
+                        {/* Language dropdown */}
                         <Button
-                            key={section}
-                            onClick={() => scrollToId(section.toLowerCase())}
+                            onClick={handleClick}
+                            endIcon={
+                                <KeyboardArrowDownIcon
+                                    sx={{
+                                        transition: "transform 0.3s",
+                                        transform: open ? "rotate(180deg)" : "rotate(0deg)",
+                                    }}
+                                />
+                            }
                             sx={{
                                 mx: 1,
                                 borderRadius: "999px",
                                 textTransform: "none",
-                                color: activeSection === section.toLowerCase() ? "#ffffff" : "#acacac",
-                                bgcolor: activeSection === section.toLowerCase() ? "#202020" : "transparent",
+                                color: "#acacac",
+                                bgcolor: "transparent",
                                 "&:hover": {
-                                    bgcolor: activeSection === section.toLowerCase()
-                                        ? "white"
-                                        : "rgba(255,255,255,0.15)",
+                                    bgcolor: "rgba(255,255,255,0.15)",
                                 },
                             }}
+                        >
+                            {activeLanguage}
+                        </Button>
+                        <Menu
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={() => handleClose(null)}
+                            anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                            transformOrigin={{vertical: "top", horizontal: "center"}}
+                            PaperProps={{
+                                sx: {
+                                    display: "flex",             // horizontal layout
+                                    borderRadius: "100px",       // pill shape
+                                    bgcolor: "white",          // same as active button
+                                    px: 1,                       // horizontal padding
+                                    py: 0.25,                    // vertical padding
+                                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                                },
+                            }}
+                        >
+                            {["EN", "PT"].map((lang) => (
+                                <MenuItem
+                                    key={lang}
+                                    onClick={() => handleClose(lang.toLowerCase())}
+                                    sx={{
+                                        borderRadius: "100px",
+                                        mx: 0.5,
+                                        color: "#acacac",
+                                        bgcolor: "transparent",
+                                        "&:hover": {
+                                            bgcolor: "rgba(255,255,255,0.15)",
+                                        },
+                                    }}
+                                >
+                                    {lang}
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Toolbar>
+                </AppBar>
+            )}
+            {/* Mobile Navbar */}
+            {isMobile && (
+                <AppBar position="fixed" elevation={4} sx={{top: 0, left: 0, right: 0, borderRadius: 0, px: 1, py: 0.5, background: "white"}}>
+                    <Toolbar sx={{minHeight: "56px", display: "flex", justifyContent: "space-between"}}>
+                        <IconButton color="black" edge="end" onClick={() => setDrawerOpen(true)}>
+                            <MenuIcon />
+                        </IconButton>
+                    </Toolbar>
+                </AppBar>
+            )}
+            <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+                <Box sx={{width: 220, p: 2, display: "flex", flexDirection: "column", gap: 2}}>
+                    {sections.map((section) => (
+                        <Button
+                            key={section}
+                            onClick={() => {
+                                scrollToId(section.toLowerCase());
+                                setDrawerOpen(false);
+                            }}
+                            sx={{justifyContent: "flex-start", color: activeSection === section.toLowerCase() ? "#202020" : "#666"}}
                         >
                             {t(section)}
                         </Button>
                     ))}
-                    {/* Language dropdown */}
-                    <Button
-                        onClick={handleClick}
-                        endIcon={
-                            <KeyboardArrowDownIcon
-                                sx={{
-                                    transition: "transform 0.3s",
-                                    transform: open ? "rotate(180deg)" : "rotate(0deg)",
-                                }}
-                            />
-                        }
-                        sx={{
-                            mx: 1,
-                            borderRadius: "999px",
-                            textTransform: "none",
-                            color: "#acacac",
-                            bgcolor: "transparent",
-                            "&:hover": {
-                                bgcolor: "rgba(255,255,255,0.15)",
-                            },
-                        }}
-                    >
-                        {activeLanguage}
-                    </Button>
-                    <Menu
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={() => handleClose(null)}
-                        anchorOrigin={{vertical: "bottom", horizontal: "center"}}
-                        transformOrigin={{vertical: "top", horizontal: "center"}}
-                        PaperProps={{
-                            sx: {
-                                display: "flex",             // horizontal layout
-                                borderRadius: "100px",       // pill shape
-                                bgcolor: "white",          // same as active button
-                                px: 1,                       // horizontal padding
-                                py: 0.25,                    // vertical padding
-                                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                            },
-                        }}
-                    >
+                    <Box sx={{mt: 2, display: "flex", gap: 1}}>
                         {["EN", "PT"].map((lang) => (
-                            <MenuItem
+                            <Button
                                 key={lang}
-                                onClick={() => handleClose(lang.toLowerCase())}
-                                sx={{
-                                    borderRadius: "100px",
-                                    mx: 0.5,
-                                    color: "#acacac",
-                                    bgcolor: "transparent",
-                                    "&:hover": {
-                                        bgcolor: "rgba(255,255,255,0.15)",
-                                    },
+                                onClick={() => {
+                                    changeLanguage(lang.toLowerCase());
+                                    setDrawerOpen(false);
                                 }}
+                                sx={{color: activeLanguage === lang ? "#202020" : "#666"}}
                             >
                                 {lang}
-                            </MenuItem>
+                            </Button>
                         ))}
-                    </Menu>
-                </Toolbar>
-            </AppBar>
-
+                    </Box>
+                </Box>
+            </Drawer>
             {/* Offset for fixed AppBar */}
             <Toolbar/>
 
