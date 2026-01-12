@@ -49,29 +49,6 @@ const skillsData = [
             { name: "MapReduce", level: 4 },
         ]
     },
-
-    {
-        title: "AI",
-        icon: <SmartToyIcon />,
-        level: 4,
-        skills: [
-            { name: "RAG", level: 5 },
-            { name: "LLMs", level: 4 },
-            { name: "Fine-tuning", level: 3 },
-        ]
-    },
-    {
-        title: "Frontend",
-        icon: <CodeIcon />,
-        level: 3,
-        skills: [
-            { name: "React", level: 3 },
-            { name: "Angular", level: 2 },
-            { name: "JavaScript", level: 3 },
-            { name: "Material UI", level: 3 },
-            { name: "HTML / CSS", level: 3 }
-        ]
-    },
     {
         title: "Backend",
         icon: <StorageIcon />,
@@ -80,6 +57,29 @@ const skillsData = [
             { name: "Java", level: 5 },
             { name: "Spring Boot", level: 5 },
             { name: "Python", level: 4 },
+        ]
+    },
+
+    {
+        title: "AI",
+        icon: <SmartToyIcon />,
+        level: 3,
+        skills: [
+            { name: "RAG", level: 5 },
+            { name: "LLMs", level: 4 },
+            { name: "Fine-tuning", level: 2 },
+        ]
+    },
+
+    {
+        title: "Frontend",
+        icon: <CodeIcon />,
+        level: 2,
+        skills: [
+            { name: "React", level: 2 },
+            { name: "JavaScript", level: 3 },
+            { name: "Material UI", level: 2 },
+            { name: "HTML / CSS", level: 3 }
         ]
     },
     {
@@ -119,12 +119,17 @@ export default function Skills() {
                 alignItems="stretch"
             >
                 {skillsData.map((stack) => (
-                    <Grid item xs={12} sm={6} md={3} key={stack.title}>
+                    <Grid item xs={12} sm={6} md={3} key={stack.title}
+                          sx={{
+                              display: "flex",
+                              justifyContent: "center"
+                          }}>
                         <Card
                             elevation={0}
                             sx={{
                                 height: "100%",
                                 display: "flex",
+                                width: "300px",
                                 flexDirection: "column",
                                 borderRadius: 3,
                                 border: `1px solid ${theme.palette.divider}`,

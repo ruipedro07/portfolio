@@ -15,13 +15,13 @@ export default function Experience() {
                     variant="h1"
                     component="div"
                     sx={{
-                        fontSize: { xs: "2rem", md: "4rem" },
+                        fontSize: { xs: "20pt", md: "30pt" },
                         fontWeight: "bold",
                         color: "primary.main",
                         lineHeight: 1
                     }}
                 >
-                    +3 Years
+                    +6 Years
                 </Typography>
                 <Typography
                     variant="subtitle1"

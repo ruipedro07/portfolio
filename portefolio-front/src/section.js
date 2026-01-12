@@ -34,7 +34,7 @@ export default function Section({
                         sx={{
                             position: "relative",
 
-                            fontSize: { xs: "3rem", md: "4rem" },
+                            fontSize: { xs: "20pt", md: "30pt" },
                             fontWeight: "bold",
                         }}
                     >

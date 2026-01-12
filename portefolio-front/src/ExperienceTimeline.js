@@ -36,11 +36,10 @@ Working in the banking risk department, focusing on regulatory reporting systems
 - Perform code debugging, root-cause analysis, and production issue resolution
 - Develop and maintain Spring Boot APIs supporting risk and reporting services
 - Build internal tools and utilities to optimize development, testing, and deployment processes. 
-    - Python tool capable of synchronizing HDFS (Hadoop Distributed File System) data between clusters using DistCp (distributed copy). 
 - Collaborate closely with risk, compliance, and business teams to ensure data accuracy and regulatory alignment
 `,
         techsStack: ["Java", "Spring Boot", "Apache Spark", "Apache Kafka", "SQL", "Hadoop", "Hive", "XL Deploy", "XL Release", "Jenkins", "Agile"],
-        icon: (<HomeWorkIcon></HomeWorkIcon>)
+        icon: (<HomeWorkIcon color="primary"></HomeWorkIcon>)
     },
     {
         id: 2,
@@ -61,7 +60,7 @@ Professional internship as a Full-stack Developer, contributing to the moderniza
 - Collaboration with senior engineers and risk teams to ensure functional alignment and system reliability
         `,
         techsStack: ["Java", "Spring Boot", "React", "Javascript", "SQL", "XL Deploy", "XL Release", "Jenkins", "OpenShift", "Agile"],
-        icon: (<HomeWorkIcon></HomeWorkIcon>)
+        icon: (<HomeWorkIcon color="primary"></HomeWorkIcon>)
     },
     {
         id: 3,
@@ -72,7 +71,7 @@ Professional internship as a Full-stack Developer, contributing to the moderniza
         workTitle: "Curricular Internship | Full-stack Engineer",
         description: "As part of my curricular internship, I developed a web-based management platform to optimize the operation of electric vehicle (EV) charging stations. The solution was built using React (frontend) and Spring Boot (backend), enabling efficient management of charging sessions, station availability, and user interactions.",
         techsStack: ["Java", "Spring Boot", "React", "Javascript", "SQL", "Git"],
-        icon: (<HomeWorkIcon></HomeWorkIcon>)
+        icon: (<HomeWorkIcon color="primary"></HomeWorkIcon>)
     },
 
 ];
@@ -121,10 +120,10 @@ export default function ExperienceTimeline() {
                                     {event.company}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    <LocationOnIcon fontSize="inherit"/> {event.location}
+                                    <LocationOnIcon color="primary" fontSize="inherit"/> {event.location}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    <WorkIcon fontSize="inherit"/> {event.type}
+                                    <WorkIcon  color="primary" fontSize="inherit"/> {event.type}
                                 </Typography>
                             </CardContent>
                         </Card>
@@ -137,7 +136,9 @@ export default function ExperienceTimeline() {
                     </TimelineSeparator>
 
                     {isMdUp && (<TimelineContent sx={{maxWidth: "100%"}}>
-                        <Card variant="outlined" sx={{mb: 10}}>
+                        <Card variant="outlined" sx={{
+                            mb: 10
+                        }}>
                             <CardContent>
                                 <Typography variant="h6" component="div" sx={{ mb: 1 }}>
                                     {event.workTitle}

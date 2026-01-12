@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="start of skill section">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="skills with level done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExperienceTimeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExperienceTimeline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/experience.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +131,8 @@
       <workItem from="1768080679078" duration="3314000" />
       <workItem from="1768093991554" duration="1873000" />
       <workItem from="1768131981667" duration="6813000" />
-      <workItem from="1768163069442" duration="3392000" />
+      <workItem from="1768163069442" duration="3523000" />
+      <workItem from="1768247671449" duration="2844000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -225,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768163700789</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="skills with level done">
+      <option name="closed" value="true" />
+      <created>1768166653374</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768166653375</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +269,8 @@
     <MESSAGE value="contact section done" />
     <MESSAGE value="mobile navbar" />
     <MESSAGE value="start of skill section" />
-    <option name="LAST_COMMIT_MESSAGE" value="start of skill section" />
+    <MESSAGE value="skills with level done" />
+    <option name="LAST_COMMIT_MESSAGE" value="skills with level done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
