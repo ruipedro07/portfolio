@@ -5,7 +5,7 @@ import {
     CardContent,
     Typography,
     Stack,
-    useTheme
+    useTheme, Chip
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import StorageIcon from "@mui/icons-material/Storage";
@@ -14,28 +14,7 @@ import CloudIcon from "@mui/icons-material/Cloud";
 import WarehouseIcon from '@mui/icons-material/Warehouse';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 
-const LevelDots = ({ level, size = 8 }) => {
-    const theme = useTheme();
 
-    return (
-        <Stack direction="row" spacing={0.6}>
-            {[1, 2, 3, 4, 5].map((dot) => (
-                <Box
-                    key={dot}
-                    sx={{
-                        width: size,
-                        height: size,
-                        borderRadius: "50%",
-                        backgroundColor:
-                            dot <= level
-                                ? theme.palette.primary.main
-                                : theme.palette.divider
-                    }}
-                />
-            ))}
-        </Stack>
-    );
-};
 
 const skillsData = [
     {
@@ -67,6 +46,12 @@ const skillsData = [
         skills: [
             { name: "RAG", level: 5 },
             { name: "LLMs", level: 4 },
+            { name: "Fine-tuning", level: 2 },
+            { name: "Fine-tuning", level: 2 },
+            { name: "Fine-tuning", level: 2 },
+            { name: "Fine-tuning", level: 2 },
+            { name: "Fine-tuning", level: 2 },
+            { name: "Fine-tuning", level: 2 },
             { name: "Fine-tuning", level: 2 },
         ]
     },
@@ -112,25 +97,23 @@ export default function Skills() {
 
     return (
         <Box sx={{ mt: 6 }}>
-            <Grid
-                container
-                spacing={3}
-                justifyContent="center"
-                alignItems="stretch"
-            >
-                {skillsData.map((stack) => (
-                    <Grid item xs={12} sm={6} md={3} key={stack.title}
-                          sx={{
-                              display: "flex",
-                              justifyContent: "center"
-                          }}>
+            <Grid container spacing={3}>
+                {skillsData.map((category) => (
+                    <Box
+                        sx={{
+                            display: "grid",
+                            gridTemplateColumns: {
+                                xs: "1fr",
+                                sm: "repeat(2, 1fr)",
+                                md: "repeat(auto-fit, minmax(260px, 1fr))",
+                            },
+                            gap: 3,
+                        }}
+                    >
                         <Card
                             elevation={0}
                             sx={{
                                 height: "100%",
-                                display: "flex",
-                                width: "300px",
-                                flexDirection: "column",
                                 borderRadius: 3,
                                 border: `1px solid ${theme.palette.divider}`,
                                 transition: "all 0.3s ease",
@@ -140,48 +123,40 @@ export default function Skills() {
                                 }
                             }}
                         >
-                            <CardContent sx={{ flexGrow: 1 }}>
+                            <CardContent>
                                 <Stack spacing={2}>
-                                    {/* Stack Header */}
-                                    <Stack
-                                        direction="row"
-                                        justifyContent="space-between"
-                                        alignItems="center"
-                                        spacing={1.2}
-                                    >
-                                        <Stack direction="row" spacing={1} alignItems="center">
-                                            <Box color="primary.main">{stack.icon}</Box>
-                                            <Typography variant="h6" fontWeight={600}>
-                                                {stack.title}
-                                            </Typography>
-                                        </Stack>
-                                        <LevelDots level={stack.level} size={10} />
+                                    <Stack direction="row" spacing={1} alignItems="center">
+                                        <Box color="primary.main">{category.icon}</Box>
+                                        <Typography variant="h6" fontWeight={600}>
+                                            {category.title}
+                                        </Typography>
                                     </Stack>
 
-                                    {/* Skills */}
-                                    <Stack spacing={1.2}>
-                                        {stack.skills.map((skill) => (
-                                            <Stack
-                                                key={skill.name}
-                                                direction="row"
-                                                justifyContent="space-between"
-                                                alignItems="center"
-                                                spacing={2}
-                                            >
-                                                <Typography
-                                                    variant="body2"
-                                                    color="text.secondary"
-                                                >
-                                                    {skill.name}
-                                                </Typography>
-                                                <LevelDots level={skill.level} />
-                                            </Stack>
+                                    <Box
+                                        sx={{
+                                            display: "grid",
+                                            gridTemplateColumns: "repeat(4, 1fr)", // 👈 exactly 4 per row
+                                            gap: 1,
+                                        }}
+                                    >
+                                        {category.skills.map((skill) => (
+                                            <Chip
+                                                key={skill}
+                                                label={skill.name}
+                                                variant="outlined"
+                                                size="small"
+                                                sx={{
+                                                    mb: 1,
+                                                    borderRadius: 1,
+                                                    fontWeight: 500
+                                                }}
+                                            />
                                         ))}
-                                    </Stack>
+                                    </Box>
                                 </Stack>
                             </CardContent>
                         </Card>
-                    </Grid>
+                    </Box>
                 ))}
             </Grid>
         </Box>

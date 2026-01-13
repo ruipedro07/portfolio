@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="skills with level done">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="positions adjust">
+      <change afterPath="$PROJECT_DIR$/src/components/leveldots.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExperienceTimeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExperienceTimeline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/experience.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +129,8 @@
       <workItem from="1768093991554" duration="1873000" />
       <workItem from="1768131981667" duration="6813000" />
       <workItem from="1768163069442" duration="3523000" />
-      <workItem from="1768247671449" duration="2844000" />
+      <workItem from="1768247671449" duration="2969000" />
+      <workItem from="1768260558207" duration="1783000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -238,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768166653375</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="positions adjust">
+      <option name="closed" value="true" />
+      <created>1768250695223</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768250695223</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +276,8 @@
     <MESSAGE value="mobile navbar" />
     <MESSAGE value="start of skill section" />
     <MESSAGE value="skills with level done" />
-    <option name="LAST_COMMIT_MESSAGE" value="skills with level done" />
+    <MESSAGE value="positions adjust" />
+    <option name="LAST_COMMIT_MESSAGE" value="positions adjust" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,6 +286,12 @@
           <url>file://$PROJECT_DIR$/src/App.js</url>
           <line>9</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/leveldots.js</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
