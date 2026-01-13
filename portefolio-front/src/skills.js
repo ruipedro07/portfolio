@@ -23,6 +23,7 @@ const skillsData = [
         level: 5,
         skills: [
             { name: "Hadoop", level: 5 },
+            { name: "HDFS", level: 5 },
             { name: "Java Spark", level: 5 },
             { name: "Hive", level: 5 },
             { name: "MapReduce", level: 4 },
@@ -47,12 +48,7 @@ const skillsData = [
             { name: "RAG", level: 5 },
             { name: "LLMs", level: 4 },
             { name: "Fine-tuning", level: 2 },
-            { name: "Fine-tuning", level: 2 },
-            { name: "Fine-tuning", level: 2 },
-            { name: "Fine-tuning", level: 2 },
-            { name: "Fine-tuning", level: 2 },
-            { name: "Fine-tuning", level: 2 },
-            { name: "Fine-tuning", level: 2 },
+            { name: "Vector Databases", level: 2 },
         ]
     },
 
@@ -74,9 +70,13 @@ const skillsData = [
         skills: [
             { name: "Git", level: 5 },
             { name: "Jira", level: 5 },
-            { name: "Docker", level: 4 },
             { name: "CI/CD", level: 4 },
             { name: "Linux", level: 4 },
+            { name: "Docker", level: 4 },
+            { name: "Github Actions", level: 4 },
+            { name: "Jenkins", level: 4 },
+            { name: "XL Deploy", level: 4 },
+            { name: "XL Release", level: 4 },
         ]
     },
     {
@@ -84,10 +84,8 @@ const skillsData = [
         icon: <CloudIcon />,
         level: 3,
         skills: [
-            { name: "MongoDB", level: 4 },
+            { name: "SQL Server", level: 4 },
             { name: "PostgreSQL", level: 3 },
-            { name: "Firebase", level: 4 },
-            { name: "AWS", level: 3 }
         ]
     }
 ];
@@ -97,23 +95,20 @@ export default function Skills() {
 
     return (
         <Box sx={{ mt: 6 }}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} direction="row" justifyContent="center" alignItems="center">
                 {skillsData.map((category) => (
-                    <Box
-                        sx={{
-                            display: "grid",
-                            gridTemplateColumns: {
-                                xs: "1fr",
-                                sm: "repeat(2, 1fr)",
-                                md: "repeat(auto-fit, minmax(260px, 1fr))",
-                            },
-                            gap: 3,
-                        }}
+                    <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        md={4}
+                        key={category.title}
                     >
                         <Card
                             elevation={0}
                             sx={{
                                 height: "100%",
+                                width: "100%",
                                 borderRadius: 3,
                                 border: `1px solid ${theme.palette.divider}`,
                                 transition: "all 0.3s ease",
@@ -135,30 +130,28 @@ export default function Skills() {
                                     <Box
                                         sx={{
                                             display: "grid",
-                                            gridTemplateColumns: "repeat(4, 1fr)", // 👈 exactly 4 per row
+                                            gridTemplateColumns: "repeat(3, 1fr)", // skills grid
                                             gap: 1,
                                         }}
                                     >
                                         {category.skills.map((skill) => (
                                             <Chip
-                                                key={skill}
+                                                key={skill.name}
                                                 label={skill.name}
                                                 variant="outlined"
                                                 size="small"
-                                                sx={{
-                                                    mb: 1,
-                                                    borderRadius: 1,
-                                                    fontWeight: 500
-                                                }}
+                                                sx={{ mb: 1, borderRadius: 1, fontWeight: 500 }}
                                             />
                                         ))}
                                     </Box>
                                 </Stack>
                             </CardContent>
                         </Card>
-                    </Box>
+                    </Grid>
                 ))}
             </Grid>
         </Box>
+
+
     );
 }
