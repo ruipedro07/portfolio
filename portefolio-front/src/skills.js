@@ -101,64 +101,65 @@ export default function Skills() {
     const theme = useTheme();
 
     return (
-        <Box sx={{ mt: 6 }}>
-            <Grid container spacing={3} direction="row" justifyContent="center" alignItems="center">
-                {skillsData.map((category) => (
-                    <Grid
-                        item
-                        xs={12}
-                        sm={4}
-                        md={4}
-                        key={category.title}
-                    >
-                        <Card
-                            elevation={0}
-                            sx={{
-                                height: "100%",
-                                width: "100%",
-                                borderRadius: 3,
-                                border: `1px solid ${theme.palette.divider}`,
-                                transition: "all 0.3s ease",
-                                "&:hover": {
-                                    transform: "translateY(-6px)",
-                                    boxShadow: theme.shadows[6]
-                                }
-                            }}
-                        >
-                            <CardContent>
-                                <Stack spacing={2}>
-                                    <Stack direction="row" spacing={1} alignItems="center">
-                                        <Box color="primary.main">{category.icon}</Box>
-                                        <Typography variant="h6" fontWeight={600}>
-                                            {category.title}
-                                        </Typography>
-                                    </Stack>
+        <Box
+            sx={{
+                mt: 6,
+                display: "grid",
+                gap: 3,
+                gridTemplateColumns: {
+                    xs: "repeat(1, minmax(0, 1fr))",
+                    sm: "repeat(2, minmax(0, 1fr))",
+                    md: "repeat(3, minmax(0, 1fr))",
+                },
+            }}
+        >
+            {skillsData.map((category) => (
+                <Card
+                    key={category.title}
+                    elevation={0}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        borderRadius: 3,
+                        border: `1px solid ${theme.palette.divider}`,
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                            transform: "translateY(-6px)",
+                            boxShadow: theme.shadows[6],
+                        },
+                    }}
+                >
+                    <CardContent sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                        <Stack spacing={2} sx={{ height: "100%" }}>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                                <Box color="primary.main">{category.icon}</Box>
+                                <Typography variant="h6" fontWeight={600}>
+                                    {category.title}
+                                </Typography>
+                            </Stack>
 
-                                    <Box
-                                        sx={{
-                                            display: "grid",
-                                            gridTemplateColumns: "repeat(2, 1fr)", // skills grid
-                                            gap: 1,
-                                        }}
-                                    >
-                                        {category.skills.map((skill) => (
-                                            <Chip
-                                                key={skill.name}
-                                                label={skill.name}
-                                                variant="outlined"
-                                                size="small"
-                                                sx={{ mb: 1, borderRadius: 1, fontWeight: 500 }}
-                                            />
-                                        ))}
-                                    </Box>
-                                </Stack>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                ))}
-            </Grid>
+                            <Box
+                                sx={{
+                                    display: "grid",
+                                    gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))",
+                                    gap: 1,
+                                }}
+                            >
+                                {category.skills.map((skill) => (
+                                    <Chip
+                                        key={skill.name}
+                                        label={skill.name}
+                                        variant="outlined"
+                                        size="small"
+                                        sx={{ borderRadius: 1, fontWeight: 500 }}
+                                    />
+                                ))}
+                            </Box>
+                        </Stack>
+                    </CardContent>
+                </Card>
+            ))}
         </Box>
-
-
     );
 }
