@@ -15,6 +15,7 @@ import {
 import Contact from "./contact";
 import Skills from "./skills";
 import Education from "./education";
+import DevelopmentInProgress from "./components/devprogress";
 
 const Portfolio = ({
                        name,
@@ -52,19 +53,19 @@ const Portfolio = ({
             >
 
                 <Section id="home" title={t("Home")}>
-                    {/*<Typography variant="body1">{t("welcome")}</Typography>*/}
+                    <DevelopmentInProgress></DevelopmentInProgress>
                 </Section>
 
 
                 {/* About */}
                 <Section id="about" title={t("About")}>
-                    {/*<Typography variant="body1"> {t("aboutMe")}</Typography>*/}
+                    <DevelopmentInProgress></DevelopmentInProgress>
                 </Section>
 
 
                 {/* Projects */}
                 <Section id="projects" title={t("Projects")}>
-                    <Typography variant="body1">TODO</Typography>
+                    <DevelopmentInProgress></DevelopmentInProgress>
                 </Section>
 
 

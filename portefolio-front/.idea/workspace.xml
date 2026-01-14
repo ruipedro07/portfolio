@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="animations">
-      <change afterPath="$PROJECT_DIR$/src/components/customchip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/education.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="some code refactor">
+      <change afterPath="$PROJECT_DIR$/src/components/devprogress.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/timeline.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +132,7 @@
       <workItem from="1768247671449" duration="2969000" />
       <workItem from="1768260558207" duration="4498000" />
       <workItem from="1768336065896" duration="4633000" />
-      <workItem from="1768391931943" duration="9085000" />
+      <workItem from="1768391931943" duration="9396000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -292,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768416057550</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="some code refactor">
+      <option name="closed" value="true" />
+      <created>1768433396617</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1768433396617</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +330,8 @@
     <MESSAGE value="skills adjusted" />
     <MESSAGE value="skills chips adjusted" />
     <MESSAGE value="animations" />
-    <option name="LAST_COMMIT_MESSAGE" value="animations" />
+    <MESSAGE value="some code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="some code refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
