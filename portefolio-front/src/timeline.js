@@ -5,7 +5,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import {Card, CardContent, Chip, Stack, Typography, useTheme, useMediaQuery, Box} from '@mui/material';
+import {Card, CardContent, Typography, useTheme, useMediaQuery, Box} from '@mui/material';
 import TimelineOppositeContent, {
     timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
@@ -14,6 +14,7 @@ import TimelineOppositeContent, {
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WorkIcon from '@mui/icons-material/Work';
 import ReactMarkdown from "react-markdown";
+import {CustomChip} from "./components/customchip";
 
 
 export default function CustomTimeline({events, smallVersion}) {
@@ -112,7 +113,10 @@ export default function CustomTimeline({events, smallVersion}) {
                                     }}
                                 >
                                     {event.techsStack && event.techsStack.map((s) => (
-                                        <Chip key={s} label={s} sx={{fontWeight: 600}}/>
+                                        <CustomChip
+                                            key={s}
+                                            label={s}>
+                                        </CustomChip>
                                     ))}
                                 </Box>
                             </CardContent>
@@ -163,7 +167,11 @@ export default function CustomTimeline({events, smallVersion}) {
                                     }}
                                 >
                                     {event.techsStack && event.techsStack.map((s) => (
-                                        <Chip key={s} label={s} sx={{fontWeight: 600}}/>
+                                        <CustomChip
+                                            key={s}
+                                            label={s}>
+                                        </CustomChip>
+
                                     ))}
                                 </Box>
                             </CardContent>

@@ -32,23 +32,15 @@ export default function Contact({
             sx={{
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'row' },
-                justifyContent: { xs: 'flex-start', md: 'center' },
-                alignItems: { xs: 'center', md: 'start' },
+                alignItems: 'stretch',
                 width: '100%',
-                gap: 6,
-                py: 4
+                gap: 5,
+                py: 4,
+                px: { xs: 2, md: 0 }, // respect margins on small screens
             }}
         >
             {/* Left Column: Contact Info */}
-            <Box
-                sx={{
-                    flex: 1,
-                    minWidth: '250px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 2,
-                }}
-            >
+            <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <Typography variant="h5" fontWeight={300}>
                     Contact Info
                 </Typography>
@@ -88,7 +80,8 @@ export default function Contact({
                 sx={{
                     flex: 1,
                     width: '100%',
-                    maxWidth: { xs: '100%', sm: '500px' },
+                    maxWidth: '100%',
+                    boxSizing: 'border-box', // include padding in the width
                     p: { xs: 2, sm: 3 },
                     borderRadius: 2,
                     boxShadow: 2,

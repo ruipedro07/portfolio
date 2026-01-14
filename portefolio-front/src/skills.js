@@ -1,11 +1,10 @@
 import {
     Box,
-    Grid,
     Card,
     CardContent,
     Typography,
     Stack,
-    useTheme, Chip
+    useTheme
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import StorageIcon from "@mui/icons-material/Storage";
@@ -14,6 +13,7 @@ import CloudIcon from "@mui/icons-material/Cloud";
 import WarehouseIcon from '@mui/icons-material/Warehouse';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import {motion} from "framer-motion";
+import {CustomChip} from "./components/customchip";
 
 
 const skillsData = [
@@ -165,14 +165,11 @@ export default function Skills() {
                                         gap: 1,                   // space between chips
                                     }}
                                 >
-                                    {/* TODO Criar componente reusable do chip */category.skills.map((skill) => (
-                                        <Chip
+                                    {category.skills.map((skill) => (
+                                        <CustomChip
                                             key={skill.name}
-                                            label={skill.name}
-                                            //  variant="outlined"
-                                            //size="small"
-                                            sx={{fontWeight: 300}}
-                                        />
+                                            label={skill.name}>
+                                        </CustomChip>
                                     ))}
                                 </Box>
                             </Stack>
