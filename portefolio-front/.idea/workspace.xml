@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="skills adjusted">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExperienceTimeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/timeline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/experience.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +134,9 @@
       <workItem from="1768131981667" duration="6813000" />
       <workItem from="1768163069442" duration="3523000" />
       <workItem from="1768247671449" duration="2969000" />
-      <workItem from="1768260558207" duration="3779000" />
+      <workItem from="1768260558207" duration="4498000" />
+      <workItem from="1768336065896" duration="4633000" />
+      <workItem from="1768391931943" duration="817000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -251,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768262459309</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="skills adjusted">
+      <option name="closed" value="true" />
+      <created>1768264519007</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1768264519007</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +313,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/leveldots.js</url>
           <line>8</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

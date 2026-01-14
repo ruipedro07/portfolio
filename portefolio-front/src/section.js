@@ -11,8 +11,7 @@ export default function Section({
         <Box
             id={id}
             sx={{
-                minHeight: "100vh",
-                py: 10,
+                py: 5,
                 backgroundColor: "#ffffff",
                 display: "flex",          // make the section a flex container
                 flexDirection: "column",  // stack content vertically

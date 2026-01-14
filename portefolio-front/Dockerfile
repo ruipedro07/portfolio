@@ -16,7 +16,9 @@ RUN npm install --legacy-peer-deps
 COPY . .
 
 ARG REACT_APP_API_HOST
+
 ENV REACT_APP_API_HOST=$REACT_APP_API_HOST
+ENV GENERATE_SOURCEMAP=false
 
 RUN npm run build
 

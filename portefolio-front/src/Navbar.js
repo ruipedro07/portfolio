@@ -25,7 +25,7 @@ const projects = [
 
 export default function Navbar() {
 
-    const sections = ["Home", "About", "Projects", "Skills", "Experience", "Contact"];
+    const sections = ["Home", "About", "Projects", "Skills", "Experience", "Education",  "Contact"];
 
     const {t, i18n} = useTranslation();
     // Navbar offset (height of AppBar). Tune if your AppBar is taller/shorter.
