@@ -5,7 +5,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import {Card, CardContent, Chip, Stack, Typography, useTheme, useMediaQuery} from '@mui/material';
+import {Card, CardContent, Chip, Stack, Typography, useTheme, useMediaQuery, Box} from '@mui/material';
 import TimelineOppositeContent, {
     timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
@@ -102,17 +102,19 @@ export default function CustomTimeline({events, smallVersion}) {
                                     {event.description}
                                 </ReactMarkdown>
 
-                                <Stack
-                                    direction="row"
-                                    flexWrap="wrap"
-                                    spacing={2}        // horizontal spacing
-                                    sx={{rowGap: 1.5, mt: 2}} // vertical spacing between wrapped rows
-                                    alignItems="center"
+                                <Box
+                                    sx={{
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        mt: 2,
+                                        // justifyContent: "center", // center horizontally
+                                        gap: 1,                   // space between chips
+                                    }}
                                 >
                                     {event.techsStack && event.techsStack.map((s) => (
                                         <Chip key={s} label={s} sx={{fontWeight: 600}}/>
                                     ))}
-                                </Stack>
+                                </Box>
                             </CardContent>
                         </Card>
                     </TimelineContent>)}
@@ -151,17 +153,19 @@ export default function CustomTimeline({events, smallVersion}) {
                                 </ReactMarkdown>
 
 
-                                <Stack
-                                    direction="row"
-                                    flexWrap="wrap"
-                                    spacing={2}        // horizontal spacing
-                                    sx={{rowGap: 1.5, mt: 2}} // vertical spacing between wrapped rows
-                                    alignItems="center"
+                                <Box
+                                    sx={{
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        mt: 2,
+                                        // justifyContent: "center", // center horizontally
+                                        gap: 1,                   // space between chips
+                                    }}
                                 >
                                     {event.techsStack && event.techsStack.map((s) => (
                                         <Chip key={s} label={s} sx={{fontWeight: 600}}/>
                                     ))}
-                                </Stack>
+                                </Box>
                             </CardContent>
                         </Card>
                     </TimelineContent>)}
