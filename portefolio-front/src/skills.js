@@ -141,9 +141,10 @@ export default function Skills() {
 
                             <Box
                                 sx={{
-                                    display: "grid",
-                                    gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))",
-                                    gap: 1,
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    justifyContent: "center", // center horizontally
+                                    gap: 1,                   // space between chips
                                 }}
                             >
                                 {category.skills.map((skill) => (
