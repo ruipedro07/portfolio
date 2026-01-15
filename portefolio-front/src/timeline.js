@@ -15,13 +15,14 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WorkIcon from '@mui/icons-material/Work';
 import ReactMarkdown from "react-markdown";
 import {CustomChip} from "./components/customchip";
+import {CollapsibleMarkdown} from "./components/collapsableMarkdown";
 
 
 export default function CustomTimeline({events, smallVersion}) {
 
-    console.log(events.length , smallVersion)
+    console.log(events.length, smallVersion)
     const theme = useTheme();
-    const isMdUp = useMediaQuery(theme.breakpoints.up('md')) && !smallVersion ;
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md')) && !smallVersion;
 
 
     return (
@@ -85,23 +86,7 @@ export default function CustomTimeline({events, smallVersion}) {
                                 <Typography variant="h6" component="div" sx={{mb: 1}}>
                                     {event.workTitle}
                                 </Typography>
-                                <ReactMarkdown
-                                    components={{
-                                        p: ({node, ...props}) => (
-                                            <Typography variant="body1" {...props} />
-                                        ),
-                                        strong: ({node, ...props}) => (
-                                            <Typography component="span" variant="body1" fontWeight="bold" {...props} />
-                                        ),
-                                        li: ({node, ...props}) => (
-                                            <li>
-                                                <Typography component="span" variant="body1" {...props} />
-                                            </li>
-                                        ),
-                                    }}
-                                >
-                                    {event.description}
-                                </ReactMarkdown>
+                                <CollapsibleMarkdown content={event.description}/>
 
                                 <Box
                                     sx={{
@@ -138,23 +123,7 @@ export default function CustomTimeline({events, smallVersion}) {
                                 <Typography variant="h6" component="div" sx={{mb: 1}}>
                                     {event.workTitle} @ {event.company}
                                 </Typography>
-                                <ReactMarkdown
-                                    components={{
-                                        p: ({node, ...props}) => (
-                                            <Typography variant="body1" {...props} />
-                                        ),
-                                        strong: ({node, ...props}) => (
-                                            <Typography component="span" variant="body1" fontWeight="bold" {...props} />
-                                        ),
-                                        li: ({node, ...props}) => (
-                                            <li>
-                                                <Typography component="span" variant="body1" {...props} />
-                                            </li>
-                                        ),
-                                    }}
-                                >
-                                    {event.description}
-                                </ReactMarkdown>
+                                <CollapsibleMarkdown content={event.description}/>
 
 
                                 <Box

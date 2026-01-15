@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    Typography,
     Box,
 } from "@mui/material";
 import {useTranslation} from "react-i18next";
@@ -30,8 +29,6 @@ const Portfolio = ({
                        formSubmitError
                    }) => {
     const {t, i18n} = useTranslation();
-    // Navbar offset (height of AppBar). Tune if your AppBar is taller/shorter.
-
 
     const submitContactForm = (event) => {
         event.preventDefault();
@@ -40,9 +37,7 @@ const Portfolio = ({
 
     return (
         <>
-
             <Navbar/>
-
 
             <Box
                 sx={{

@@ -9,7 +9,6 @@ import {
 import CodeIcon from "@mui/icons-material/Code";
 import StorageIcon from "@mui/icons-material/Storage";
 import BuildIcon from "@mui/icons-material/Build";
-import CloudIcon from "@mui/icons-material/Cloud";
 import WarehouseIcon from '@mui/icons-material/Warehouse';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import {motion} from "framer-motion";

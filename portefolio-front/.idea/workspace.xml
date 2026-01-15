@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="some code refactor">
-      <change afterPath="$PROJECT_DIR$/src/components/devprogress.js" afterDir="false" />
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="dev progress indicator">
+      <change afterPath="$PROJECT_DIR$/src/components/collapsableMarkdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../email/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../email/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/devprogress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/devprogress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/timeline.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +137,8 @@
       <workItem from="1768247671449" duration="2969000" />
       <workItem from="1768260558207" duration="4498000" />
       <workItem from="1768336065896" duration="4633000" />
-      <workItem from="1768391931943" duration="9396000" />
+      <workItem from="1768391931943" duration="9974000" />
+      <workItem from="1768509809443" duration="1532000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -294,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768433396617</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="dev progress indicator">
+      <option name="closed" value="true" />
+      <created>1768433721705</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1768433721705</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,14 +345,15 @@
     <MESSAGE value="skills chips adjusted" />
     <MESSAGE value="animations" />
     <MESSAGE value="some code refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="some code refactor" />
+    <MESSAGE value="dev progress indicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev progress indicator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>7</line>
+          <line>6</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -349,7 +364,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/education.js</url>
           <line>45</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

@@ -22,9 +22,6 @@ const DevelopmentInProgress = () => {
                 <Typography variant="body2" color="text.secondary">
                     This section is still under construction. Please check back soon!
                 </Typography>
-                <Box sx={{ mt: 1 }}>
-                    <CircularProgress size={24} />
-                </Box>
             </Box>
         </Paper>
     );
