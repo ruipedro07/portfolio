@@ -1,15 +1,16 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import ReactMarkdown from "react-markdown";
+import { motion } from "framer-motion";
 
-const COLLAPSED_HEIGHT = 120; // px – adjust as needed
+const COLLAPSED_HEIGHT = 120;
 
 export function CollapsibleMarkdown({ content }) {
     const [expanded, setExpanded] = useState(false);
     const [showToggle, setShowToggle] = useState(false);
     const contentRef = useRef(null);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (contentRef.current) {
             setShowToggle(contentRef.current.scrollHeight > COLLAPSED_HEIGHT);
         }
@@ -18,13 +19,14 @@ export function CollapsibleMarkdown({ content }) {
     return (
         <>
             <Box
+                component={motion.div}
                 ref={contentRef}
                 sx={{
-                    maxHeight: expanded ? "none" : COLLAPSED_HEIGHT,
                     overflow: "hidden",
-                    transition: "max-height 0.3s ease",
                     position: "relative",
                 }}
+                animate={{ height: expanded ? "auto" : COLLAPSED_HEIGHT }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
             >
                 <ReactMarkdown
                     components={{
@@ -32,12 +34,7 @@ export function CollapsibleMarkdown({ content }) {
                             <Typography variant="body1" {...props} />
                         ),
                         strong: ({ node, ...props }) => (
-                            <Typography
-                                component="span"
-                                variant="body1"
-                                fontWeight="bold"
-                                {...props}
-                            />
+                            <Typography component="span" variant="body1" fontWeight="bold" {...props} />
                         ),
                         li: ({ node, ...props }) => (
                             <li>
@@ -53,7 +50,7 @@ export function CollapsibleMarkdown({ content }) {
             {showToggle && (
                 <Button
                     size="small"
-                    onClick={() => setExpanded(prev => !prev)}
+                    onClick={() => setExpanded((prev) => !prev)}
                     sx={{ mt: 1, px: 0 }}
                 >
                     {expanded ? "Show less" : "Show more"}

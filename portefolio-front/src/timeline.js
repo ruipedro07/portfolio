@@ -13,7 +13,6 @@ import TimelineOppositeContent, {
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WorkIcon from '@mui/icons-material/Work';
-import ReactMarkdown from "react-markdown";
 import {CustomChip} from "./components/customchip";
 import {CollapsibleMarkdown} from "./components/collapsableMarkdown";
 
@@ -28,21 +27,18 @@ export default function CustomTimeline({events, smallVersion}) {
     return (
         <Timeline
             position="right"
-            sx={() => {
-                if (isMdUp)
-                    return {
-                        [`& .${timelineOppositeContentClasses.root}`]: {
-                            flex: 0.2,
-                        }
+            sx={{
+                width: "100%",
+                minWidth: 0,
+                m: 0,
+                p: 0,
+                ...(isMdUp
+                    ? {
+                        [`& .${timelineOppositeContentClasses.root}`]: { flex: 0.2 },
                     }
-                else
-                    return {
-                        [`& .${timelineItemClasses.root}:before`]: {
-                            flex: 0,
-                            padding: 0,
-                        }
-                    }
-
+                    : {
+                        [`& .${timelineItemClasses.root}:before`]: { flex: 0, padding: 0 },
+                    }),
             }}
         >
             {events.map((event, index) => (

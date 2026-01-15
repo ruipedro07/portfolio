@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="dev progress indicator">
-      <change afterPath="$PROJECT_DIR$/src/components/collapsableMarkdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../email/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../email/backend/main.py" afterDir="false" />
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="collapsable text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/devprogress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/devprogress.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/3d-rendering-abstract-black-white-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/white-texture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collapsableMarkdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapsableMarkdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/education.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/timeline.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +137,7 @@
       <workItem from="1768260558207" duration="4498000" />
       <workItem from="1768336065896" duration="4633000" />
       <workItem from="1768391931943" duration="9974000" />
-      <workItem from="1768509809443" duration="1532000" />
+      <workItem from="1768509809443" duration="3580000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -308,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768433721705</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="collapsable text">
+      <option name="closed" value="true" />
+      <created>1768511408152</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1768511408154</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +353,8 @@
     <MESSAGE value="animations" />
     <MESSAGE value="some code refactor" />
     <MESSAGE value="dev progress indicator" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev progress indicator" />
+    <MESSAGE value="collapsable text" />
+    <option name="LAST_COMMIT_MESSAGE" value="collapsable text" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -363,7 +371,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/education.js</url>
-          <line>45</line>
+          <line>61</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
