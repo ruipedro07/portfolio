@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="collapsable text">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="certifications and awards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/3d-rendering-abstract-black-white-background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/white-texture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/collapsableMarkdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapsableMarkdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/education.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/timeline.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +134,7 @@
       <workItem from="1768260558207" duration="4498000" />
       <workItem from="1768336065896" duration="4633000" />
       <workItem from="1768391931943" duration="9974000" />
-      <workItem from="1768509809443" duration="3580000" />
+      <workItem from="1768509809443" duration="7576000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -315,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768511408154</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="certifications and awards">
+      <option name="closed" value="true" />
+      <created>1768513686094</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1768513686094</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +359,8 @@
     <MESSAGE value="some code refactor" />
     <MESSAGE value="dev progress indicator" />
     <MESSAGE value="collapsable text" />
-    <option name="LAST_COMMIT_MESSAGE" value="collapsable text" />
+    <MESSAGE value="certifications and awards" />
+    <option name="LAST_COMMIT_MESSAGE" value="certifications and awards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -43,7 +43,7 @@ const skillsData = [
             {name: "Python", level: 4},
             {name: "OOP", level: 4},
             {name: "Design patterns", level: 4},
-            {name: "Software architecture", level: 4},
+            {name: "System design", level: 4},
         ]
     },
 
@@ -75,13 +75,15 @@ const skillsData = [
         icon: <BuildIcon/>,
         level: 4,
         skills: [
-            {name: "CI/CD", level: 4},
-            {name: "Docker", level: 4},
-            {name: "Ansible", level: 4},
-            {name: "Terraform", level: 4},
+            {name: "OpenShift", level: 4},
             {name: "Github Actions", level: 4},
             {name: "Jenkins", level: 4},
-            {name: "OpenShift", level: 4},
+            {name: "Docker", level: 4},
+            {name: "CI/CD", level: 4},
+            {name: "Ansible", level: 4},
+            {name: "Terraform", level: 4},
+
+
         ]
     },
     {
@@ -91,6 +93,7 @@ const skillsData = [
         skills: [
             {name: "Git", level: 5},
             {name: "Jira", level: 5},
+            {name: "Confluence", level: 5},
             {name: "Linux", level: 4},
         ]
     },
