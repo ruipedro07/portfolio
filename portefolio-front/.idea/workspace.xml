@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="timeline animation v2">
-      <change afterPath="$PROJECT_DIR$/src/homesection.js" afterDir="false" />
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="home section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/education.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/section.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +132,8 @@
       <workItem from="1768260558207" duration="4498000" />
       <workItem from="1768336065896" duration="4633000" />
       <workItem from="1768391931943" duration="9974000" />
-      <workItem from="1768509809443" duration="12221000" />
+      <workItem from="1768509809443" duration="12312000" />
+      <workItem from="1768602788971" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -341,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768518735611</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="home section">
+      <option name="closed" value="true" />
+      <created>1768523217630</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1768523217630</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +385,8 @@
     <MESSAGE value="certifications and awards" />
     <MESSAGE value="timeline animation" />
     <MESSAGE value="timeline animation v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="timeline animation v2" />
+    <MESSAGE value="home section" />
+    <option name="LAST_COMMIT_MESSAGE" value="home section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

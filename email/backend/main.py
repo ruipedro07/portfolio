@@ -25,7 +25,7 @@ SMTP_PORT = 587
 EMAIL_ADDRESS = "contact@ruiribeiro.dev"  # Your email
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.post("/contact")
 async def contact_form(name: str = Form(...), email: EmailStr = Form(...), message: str = Form(...)):
@@ -60,36 +60,36 @@ async def contact_form(name: str = Form(...), email: EmailStr = Form(...), messa
 
 
 
-class ChatRequest(BaseModel):
-    message: str
+#class ChatRequest(BaseModel):
+#    message: str
 
-@app.post("/chat")
-async def chat_endpoint(payload: ChatRequest):
-    # Send the user's message to the Chat Completions endpoint
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",  # or "gpt-4o-mini", etc.
-        messages=[
-            {"role": "user", "content": payload.message}
-        ]
-    )
-    # Extract and return the model’s reply
-    reply = completion.choices[0].message.content
-    return {"response": reply}
-
-
-@app.post("/chat/stream")
-async def chat_stream(payload: ChatRequest):
-
-    def generator():
-        stream = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": payload.message}],
-            stream=True
-        )
-
-        for chunk in stream:
-            content = chunk.choices[0].delta.content
-            if content:
-                yield content
-
-    return StreamingResponse(generator(), media_type="text/plain")
+# @app.post("/chat")
+# async def chat_endpoint(payload: ChatRequest):
+#     # Send the user's message to the Chat Completions endpoint
+#     completion = client.chat.completions.create(
+#         model="gpt-3.5-turbo",  # or "gpt-4o-mini", etc.
+#         messages=[
+#             {"role": "user", "content": payload.message}
+#         ]
+#     )
+#     # Extract and return the model’s reply
+#     reply = completion.choices[0].message.content
+#     return {"response": reply}
+#
+#
+# @app.post("/chat/stream")
+# async def chat_stream(payload: ChatRequest):
+#
+#     def generator():
+#         stream = client.chat.completions.create(
+#             model="gpt-3.5-turbo",
+#             messages=[{"role": "user", "content": payload.message}],
+#             stream=True
+#         )
+#
+#         for chunk in stream:
+#             content = chunk.choices[0].delta.content
+#             if content:
+#                 yield content
+#
+#     return StreamingResponse(generator(), media_type="text/plain")
