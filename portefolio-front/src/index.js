@@ -7,13 +7,14 @@ import "./i18n";
 import {Provider} from "react-redux";
 import store from "./store";
 import {theme} from "./theme";
-import {ThemeProvider} from "@mui/material";
+import {CssBaseline, ThemeProvider} from "@mui/material";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <ThemeProvider theme={theme}>
           <Provider store={store}>
+              <CssBaseline />
               <Portfolio />
           </Provider>
       </ThemeProvider>

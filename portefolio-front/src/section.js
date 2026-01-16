@@ -1,52 +1,51 @@
 import React from "react";
-import {Box, Container, Typography} from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 export default function Section({
                                     id,
                                     title,
-                                    children
+                                    children,
+                                    notShowTitle,
+                                    sx = {},
+                                    bgColor,
                                 }) {
-
     return (
         <Box
             id={id}
             sx={{
                 py: 5,
-                backgroundColor: "#ffffff",
-                display: "flex",          // make the section a flex container
-                flexDirection: "column",  // stack content vertically
+                backgroundColor: bgColor ?? "#ffffff",
+                display: "flex",
+                flexDirection: "column",
+                ...sx,
             }}
         >
             <Container>
-
-                <Box sx={{
-                    position: "relative",
-                    display: "inline-block",
-                    textAlign: "center",     // horizontal centering
-                    alignItems: "center",
-                    width: "100%"
-
-                }}>
-
-                    <Typography
-                        gutterBottom
+                {!notShowTitle && (
+                    <Box
                         sx={{
                             position: "relative",
-
-                            fontSize: { xs: "20pt", md: "30pt" },
-                            fontWeight: "bold",
+                            display: "inline-block",
+                            textAlign: "center",
+                            alignItems: "center",
+                            width: "100%",
                         }}
                     >
-                        {/*"div<"+ title + ">" TODO*/}
-                        {title}
-                    </Typography>
-                </Box>
+                        <Typography
+                            gutterBottom
+                            sx={{
+                                position: "relative",
+                                fontSize: { xs: "20pt", md: "30pt" },
+                                fontWeight: "bold",
+                            }}
+                        >
+                            {title}
+                        </Typography>
+                    </Box>
+                )}
 
-                <Box  >
-                    {children}
-                </Box>
-
+                <Box>{children}</Box>
             </Container>
         </Box>
-    )
+    );
 }

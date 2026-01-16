@@ -13,16 +13,6 @@ import IconButton from "@mui/material/IconButton";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 
-
-const projects = [
-    {title: "RAG Helpdesk", subtitle: "Spring AI + OpenAI", link: "https://example.com/rag", color: "#42a5f5"},
-    {title: "Car Inventory", subtitle: "Next.js + Prisma", link: "https://example.com/cars", color: "#66bb6a"},
-    {title: "Workout Planner", subtitle: "React + PWA", link: "https://example.com/fitness", color: "#ffa726"},
-    {title: "Banking Reports", subtitle: "FRTB/COREP Toolkit", link: "https://example.com/reports", color: "#ab47bc"},
-    {title: "Chat Support Bot", subtitle: "RAG + Vector DB", link: "https://example.com/bot", color: "#ef5350"},
-    {title: "Dev Portfolio", subtitle: "MUI + R3F", link: "https://example.com/portfolio", color: "#26c6da"},
-];
-
 export default function Navbar() {
 
     const sections = ["Home", "About", "Projects", "Skills", "Experience", "Education",  "Contact"];
@@ -75,16 +65,7 @@ export default function Navbar() {
         }, 650);
     };
 
-    // Dev-time sanity checks (lightweight tests): warn if sections or projects are malformed.
-    useEffect(() => {
-        const missingIds = sections.map((s) => s.toLowerCase()).filter((id) => !document.getElementById(id));
-        if (missingIds.length) console.warn("Missing section IDs (expected):", missingIds);
 
-        const malformed = projects
-            .map((p, i) => ({p, i}))
-            .filter(({p}) => !p || typeof p.title !== "string" || typeof p.subtitle !== "string");
-        if (malformed.length) console.warn("Some projects are malformed (index):", malformed.map((m) => m.i));
-    }, []);
 
 
     /*useEffect(() => {
@@ -256,8 +237,7 @@ export default function Navbar() {
                     </Box>
                 </Box>
             </Drawer>
-            {/* Offset for fixed AppBar */}
-            <Toolbar/>
+
 
         </>
     )

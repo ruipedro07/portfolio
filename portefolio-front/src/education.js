@@ -73,7 +73,7 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
                 },
             }}
         >
-            {/* LEFT */}
+            {/* LEFT TODO adicionar cadeiras importantes nos cursos?  */}
             <Box sx={{minWidth: 0}}>
                 <CustomTimeline smallVersion={true} events={events}/>
             </Box>

@@ -15,6 +15,7 @@ import Contact from "./contact";
 import Skills from "./skills";
 import Education from "./education";
 import DevelopmentInProgress from "./components/devprogress";
+import HomeSection from "./homesection";
 
 const Portfolio = ({
                        name,
@@ -36,50 +37,56 @@ const Portfolio = ({
     }
 
     return (
-        <>
-            <Navbar/>
+        <Box sx={{ width: "100%", minHeight: "100vh" }}>
+            <Navbar />
 
-            <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column", // vertical stacking
-                    width: "100%",            // make sure it spans full width
-                }}
-            >
+            <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
+                {/* HOME with gradient */}
+                <Box
+                    sx={{
+                        minHeight: "calc(100vh - 64px)",
+                        width: "100%",
+                        background:
+                            "linear-gradient(180deg, rgba(48,114,129,1) 0%, rgba(119,167,179,1) 50%, rgba(255,255,255,1) 100%)",
+                    }}
+                >
+                    <Section
+                        notShowTitle
+                        id="home"
+                        title={t("Home")}
+                        bgColor="transparent"
+                        sx={{ py: 0, m:0, minHeight: "calc(100vh - 64px)" }}
+                    >
+                        <HomeSection />
+                    </Section>
+                </Box>
 
-                <Section id="home" title={t("Home")}>
-                    <DevelopmentInProgress></DevelopmentInProgress>
-                </Section>
-
-
-                {/* About */}
+                {/* About
                 <Section id="about" title={t("About")}>
-                    <DevelopmentInProgress></DevelopmentInProgress>
+                    <DevelopmentInProgress />
                 </Section>
 
 
-                {/* Projects */}
                 <Section id="projects" title={t("Projects")}>
-                    <DevelopmentInProgress></DevelopmentInProgress>
+                    <DevelopmentInProgress />
                 </Section>
 
+                */}
 
                 {/* Skills */}
                 <Section id="skills" title={t("Skills")}>
-                    <Skills></Skills>
+                    <Skills />
                 </Section>
-
 
                 {/* Experience */}
                 <Section id="experience" title={t("Experience")}>
-                    <Experience></Experience>
+                    <Experience />
                 </Section>
 
-                {/* Experience */}
+                {/* Education */}
                 <Section id="education" title={t("Education & Certifications")}>
-                    <Education></Education>
+                    <Education />
                 </Section>
-
 
                 {/* Contact */}
                 <Section id="contact" title={t("Contact")}>
@@ -94,16 +101,13 @@ const Portfolio = ({
                             setName,
                             setEmail,
                             loading,
-                            submitContactForm
+                            submitContactForm,
                         }}
-
-                    >
-                    </Contact>
+                    />
                 </Section>
             </Box>
-        </>
-    )
-        ;
+        </Box>
+    );
 }
 
 const mapStateToProps = (state) => ({
@@ -120,8 +124,7 @@ const mapDispatchToProps = (dispatch) => ({
     setEmail: (email) => dispatch({type: SET_FORM_EMAIL, payload: email}),
     setMessage: (message) => dispatch({type: SET_FORM_MESSAGE, payload: message}),
     submitContactFormSaga: (name, email, message) => dispatch({
-        type: SUBMIT_CONTACT_FORM,
-        payload: {name, email, message}
+        type: SUBMIT_CONTACT_FORM, payload: {name, email, message}
     }),
 
 });
