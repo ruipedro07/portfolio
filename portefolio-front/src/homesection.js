@@ -19,13 +19,13 @@ const HomeSection = () => {
                 display: "flex",
                 alignItems: "center",
                 width: "100%",
-                pt: { xs: 3, md: 0 }, // add padding-top on small screens
+                pt: { xs: 0, md: 0 }, // add padding-top on small screens
             }}
         >
             <Container maxWidth="lg">
                 <Stack
                     direction={{ xs: "column", md: "row" }}
-                    spacing={{ xs: 0, md: 5 }}
+                    spacing={{ xs: 2, md: 5 }}
                     alignItems="center"
                     justifyContent="center"
                 >

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {
     AppBar,
     Toolbar,
@@ -13,14 +13,14 @@ import {
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
-const SECTIONS = ["Home", "About", "Projects", "Skills", "Experience", "Education", "Contact"];
+const SECTIONS = ["Home", "About", "Skills", "Projects", "Experience", "Education", "Contact"];
 const LANGUAGES = ["EN", "PT"];
 const NAVBAR_OFFSET = 74; // Adjust to your AppBar height
 
 export default function Navbar() {
-    const { t, i18n } = useTranslation();
+    const {t, i18n} = useTranslation();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -46,13 +46,13 @@ export default function Navbar() {
         if (!el) return;
 
         const top = el.getBoundingClientRect().top + window.pageYOffset - NAVBAR_OFFSET;
-        window.scrollTo({ top, behavior: "smooth" });
+        window.scrollTo({top, behavior: "smooth"});
 
         // Optional: focus the section after scroll for accessibility
         setTimeout(() => {
             try {
                 el.setAttribute("tabindex", "-1");
-                el.focus({ preventScroll: true });
+                el.focus({preventScroll: true});
             } catch {
                 // Ignore focus errors
             }
@@ -63,11 +63,11 @@ export default function Navbar() {
         // Highlight the section currently in view
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach(({ isIntersecting, target }) => {
+                entries.forEach(({isIntersecting, target}) => {
                     if (isIntersecting) setActiveSection(target.id);
                 });
             },
-            { threshold: 0.5 }
+            {threshold: 0.5}
         );
 
         SECTIONS.forEach((section) => {
@@ -176,8 +176,8 @@ export default function Navbar() {
                         anchorEl={langAnchor}
                         open={isLangMenuOpen}
                         onClose={() => handleLangMenuClose(null)}
-                        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-                        transformOrigin={{ vertical: "top", horizontal: "center" }}
+                        anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                        transformOrigin={{vertical: "top", horizontal: "center"}}
                         PaperProps={{
                             sx: {
                                 display: "flex",
@@ -212,10 +212,12 @@ export default function Navbar() {
     };
 
     const renderMobileNavbar = () => (
-        <AppBar position="fixed" elevation={4} sx={{ top: 0, left: 0, right: 0, px: 1, py: 0.5, background: "transparent",  boxShadow: "none" }}>
-            <Toolbar sx={{ minHeight: "56px", display: "flex", justifyContent: "space-between" }}>
-                <IconButton color="black" sx={{border: "1px solid black", background: "white", borderRadius: "10%"}} edge="end" onClick={() => setDrawerOpen(true)}>
-                    <MenuIcon />
+        <AppBar position="fixed" elevation={4}
+                sx={{top: 0, left: 0, right: 0, px: 1, py: 0.5, background: "transparent", boxShadow: "none"}}>
+            <Toolbar sx={{minHeight: "56px", display: "flex", justifyContent: "space-between"}}>
+                <IconButton color="black" sx={{border: "1px solid black", background: "white", borderRadius: "10%"}}
+                            edge="end" onClick={() => setDrawerOpen(true)}>
+                    <MenuIcon/>
                 </IconButton>
             </Toolbar>
         </AppBar>
@@ -227,7 +229,7 @@ export default function Navbar() {
 
             {/* Mobile Drawer */}
             <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-                <Box sx={{ width: 220, p: 2, display: "flex", flexDirection: "column", gap: 2 }}>
+                <Box sx={{width: 220, p: 2, display: "flex", flexDirection: "column", gap: 2}}>
                     {SECTIONS.map((section) => {
                         const isActive = activeSection === section.toLowerCase();
                         return (
@@ -237,14 +239,14 @@ export default function Navbar() {
                                     scrollToId(section.toLowerCase());
                                     setDrawerOpen(false);
                                 }}
-                                sx={{ justifyContent: "flex-start", color: isActive ? "#202020" : "#666" }}
+                                sx={{justifyContent: "flex-start", color: isActive ? "#202020" : "#666"}}
                             >
                                 {t(section)}
                             </Button>
                         );
                     })}
 
-                    <Box sx={{ mt: 2, display: "flex", gap: 1 }}>
+                    <Box sx={{mt: 2, display: "flex", gap: 1}}>
                         {LANGUAGES.map((lang) => (
                             <Button
                                 key={lang}
@@ -252,7 +254,7 @@ export default function Navbar() {
                                     changeLanguage(lang);
                                     setDrawerOpen(false);
                                 }}
-                                sx={{ color: activeLanguage === lang ? "#202020" : "#666" }}
+                                sx={{color: activeLanguage === lang ? "#202020" : "#666"}}
                             >
                                 {lang}
                             </Button>

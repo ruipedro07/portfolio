@@ -17,6 +17,7 @@ import Education from "./education";
 import HomeSection from "./homesection";
 import Footer from "./footer";
 import About from "./about";
+import Projects from "./projects";
 
 const Portfolio = ({
                        name,
@@ -88,6 +89,15 @@ const Portfolio = ({
                     bgColor="transparent"
                 >
                     <Skills />
+                </Section>
+
+                {/* Projects */}
+                <Section
+                    id="projects"
+                    title={t("Projects")}
+                    bgColor="transparent"
+                >
+                    <Projects />
                 </Section>
 
                 {/* Experience */}
