@@ -15,6 +15,7 @@ import Contact from "./contact";
 import Skills from "./skills";
 import Education from "./education";
 import HomeSection from "./homesection";
+import Footer from "./footer";
 
 const Portfolio = ({
                        name,
@@ -104,7 +105,12 @@ const Portfolio = ({
                         }}
                     />
                 </Section>
+
+
             </Box>
+
+            <Footer />
+
         </Box>
     );
 }

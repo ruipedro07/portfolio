@@ -31,7 +31,7 @@ const HomeSection = () => {
                     {/* Picture */}
                     <Box
                         component="img"
-                        src="/foto_minha_2022.jpg"
+                        src="/foto_minha_2022.jpg" // TODO se calhar meter antes a foto na secção de about
                         alt="foto-rui"
                         sx={{
                             width: { xs: 200, md: 280 },

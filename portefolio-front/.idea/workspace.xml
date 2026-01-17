@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="black buttons">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="navbar refactor">
+      <change afterPath="$PROJECT_DIR$/src/footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homesection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/homesection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +137,8 @@
       <workItem from="1768391931943" duration="9974000" />
       <workItem from="1768509809443" duration="12312000" />
       <workItem from="1768602788971" duration="6292000" />
-      <workItem from="1768610964354" duration="890000" />
+      <workItem from="1768610964354" duration="1215000" />
+      <workItem from="1768652325260" duration="1216000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -361,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768610759976</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="navbar refactor">
+      <option name="closed" value="true" />
+      <created>1768611972786</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1768611972786</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +390,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed the disptach when pushed to main branch" />
     <MESSAGE value="Fixed language bug" />
     <MESSAGE value="Changed page title and favicon" />
     <MESSAGE value="Start of experience timeline" />
@@ -404,7 +414,8 @@
     <MESSAGE value="home section" />
     <MESSAGE value="navbar updates" />
     <MESSAGE value="black buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="black buttons" />
+    <MESSAGE value="navbar refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
