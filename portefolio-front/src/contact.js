@@ -173,10 +173,10 @@ export default function Contact({
                             <>
                                 <CircularProgress
                                     size={20}
-                                    color="inherit"
+                                    color="white"
                                     sx={{ mr: 1 }}
                                 />
-                                Sending…
+
                             </>
                         ) : (
                             "Send message"
