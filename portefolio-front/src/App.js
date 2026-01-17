@@ -14,7 +14,6 @@ import {
 import Contact from "./contact";
 import Skills from "./skills";
 import Education from "./education";
-import DevelopmentInProgress from "./components/devprogress";
 import HomeSection from "./homesection";
 
 const Portfolio = ({
@@ -37,17 +36,17 @@ const Portfolio = ({
     }
 
     return (
-        <Box sx={{ width: "100%", minHeight: "100vh" }}>
-            <Navbar />
+        <Box sx={{width: "100%", minHeight: "100vh"}}>
+            <Navbar/>
 
-            <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
+            <Box sx={{display: "flex", flexDirection: "column", width: "100%"}}>
                 {/* HOME with gradient */}
                 <Box
                     sx={{
-                        minHeight: "calc(100vh - 64px)",
+                        minHeight: "100vh",
                         width: "100%",
                         background:
-                            "linear-gradient(180deg, rgba(48,114,129,1) 0%, rgba(119,167,179,1) 50%, rgba(255,255,255,1) 100%)",
+                            "linear-gradient(180deg,rgba(81, 164, 194, 1) 0%, rgba(255, 255, 255, 1) 100%);",
                     }}
                 >
                     <Section
@@ -55,9 +54,9 @@ const Portfolio = ({
                         id="home"
                         title={t("Home")}
                         bgColor="transparent"
-                        sx={{ py: 0, m:0, minHeight: "calc(100vh - 64px)" }}
+                        sx={{py: 0, m: 0, minHeight: "calc(100vh )"}}
                     >
-                        <HomeSection />
+                        <HomeSection/>
                     </Section>
                 </Box>
 
@@ -75,7 +74,7 @@ const Portfolio = ({
 
                 {/* Skills */}
                 <Section id="skills" title={t("Skills")}>
-                    <Skills />
+                    <Skills/>
                 </Section>
 
                 {/* Experience */}
@@ -85,7 +84,7 @@ const Portfolio = ({
 
                 {/* Education */}
                 <Section id="education" title={t("Education & Certifications")}>
-                    <Education />
+                    <Education/>
                 </Section>
 
                 {/* Contact */}
