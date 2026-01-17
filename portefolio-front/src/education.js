@@ -1,7 +1,8 @@
 import * as React from "react";
-import { Typography, Paper, Box, List, ListItem, ListItemIcon, ListItemText, Avatar } from "@mui/material";
+import {Typography, Paper, Box, List, ListItem, ListItemIcon, ListItemText, Avatar} from "@mui/material";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import CustomTimeline from "./timeline";
+import Link from "@mui/material/Link";
 
 
 export default function Education() {
@@ -11,16 +12,27 @@ export default function Education() {
             title: "Introduction to Red Hat OpenShift Applications (DO101)",
             date: "Red Hat 2025",
             logo: "/logos/icons8-openshift.svg",
+            link: "https://www.credly.com/badges/4a515ad3-b4f5-4fbc-a3e9-c325ed78e072/linked_in_profile"
         },
         {
             title: "Hadoop Fundamentals",
             date: "Rumos 2025",
             logo: "/logos/icons8-hadoop-distributed-file-system-480.svg",
+            link: "https://www.linkedin.com/in/ruiribeiro-dev/overlay/1751044833155/single-media-viewer/?profileId=ACoAADkz6hEBhX5qoW7IoOQ4XBQ81Tc18yI3GVs"
         },
     ];
 
     const awards = [
-        {title: "3rd highest ranked student (Department of Computer Engineering)", date: "2022"},
+        {
+            title: "3rd highest ranked student in the bachelor's degree in informatics engineering",
+            date: "2021/2022",
+            link: "https://www.linkedin.com/in/ruiribeiro-dev/overlay/education/769503122/multiple-media-viewer/?profileId=ACoAADkz6hEBhX5qoW7IoOQ4XBQ81Tc18yI3GVs&treasuryMediaId=1768672090781"
+        },
+        {
+            title: "Diploma of merit in the bachelor's degree in informatics engineering",
+            date: "2021/2022",
+            link: "https://www.linkedin.com/in/ruiribeiro-dev/overlay/education/769503122/multiple-media-viewer/?profileId=ACoAADkz6hEBhX5qoW7IoOQ4XBQ81Tc18yI3GVs&treasuryMediaId=1768672090782"
+        },
     ];
 
     const events = [
@@ -87,7 +99,7 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
                 <List dense>
                     {certifications.map((c, i) => (
                         <ListItem key={i} disableGutters>
-                            <ListItemIcon sx={{ minWidth: 40 }}>
+                            <ListItemIcon sx={{minWidth: 40}}>
                                 <Avatar
                                     src={c.logo}
                                     alt={c.title}
@@ -97,11 +109,20 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
                                         height: 28,
                                         bgcolor: "transparent",
                                     }}
-                                    imgProps={{ style: { objectFit: "contain" } }}
+                                    imgProps={{style: {objectFit: "contain"}}}
                                 />
                             </ListItemIcon>
 
-                            <ListItemText primary={c.title} secondary={c.date} />
+                            <ListItemText primary={
+                                <Link
+                                    href={c.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    underline="hover"
+                                >
+                                    {c.title}
+                                </Link>
+                            } secondary={c.date}/>
                         </ListItem>
                     ))}
                 </List>
@@ -112,7 +133,16 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
                 <List dense>
                     {awards.map((a, i) => (
                         <ListItem key={i} disableGutters>
-                            <ListItemText primary={a.title} secondary={a.date}/>
+                            <ListItemText primary={
+                                <Link
+                                    href={a.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    underline="hover"
+                                >
+                                    {a.title}
+                                </Link>
+                            } secondary={a.date}/>
                         </ListItem>
                     ))}
                 </List>

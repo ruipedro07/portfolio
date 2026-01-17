@@ -24,36 +24,22 @@ const HomeSection = () => {
         >
             <Container maxWidth="lg">
                 <Stack
-                    direction={{ xs: "column", md: "row" }}
+                    direction={{ xs: "column", md: "column" }}
                     spacing={2}
                     alignItems="center"
                     justifyContent="space-between"
                 >
-                    {/* Picture */}
-                    <Box
-                        component="img"
-                        src="/foto_minha_2022.jpg" // TODO se calhar meter antes a foto na secção de about
-                        alt="foto-rui"
-                        sx={{
-                            width: { xs: 200, md: 280 },
-                            height: { xs: 200, md: 280 },
-                            borderRadius: "50%",
-                            objectFit: "cover",
-                            border: 2,
-                            borderColor: "black"
 
-                        }}
-                    />
 
                     {/* Intro + Buttons */}
                     <Box sx={{  maxWidth: 600 }}>
-                        <Typography variant="h3" fontWeight={700} gutterBottom>
-                            Hi, I'm Rui
+                        <Typography variant="h3" fontWeight={900} gutterBottom>
+                            Hi, I'm Rui 👋
                         </Typography>
-                        <Typography variant="h6" fontWeight={400} sx={{ opacity: 0.9, mb: 4 }}>
-                            I'm a Software Engineer passionate about building impactful digital
-                            experiences. I specialize in Big Data, Java and scalable
-                            full‑stack applications.
+                        <Typography variant="h6" fontWeight={400} sx={{ opacity: 1, mb: 4 }}>
+                            I'm a Software Engineer passionate about building
+                            impactful digital experiences. I specialize in <strong><u>Big Data, Java</u></strong> and
+                            scalable <strong><u>full‑stack</u></strong> applications.
                         </Typography>
 
                         <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
@@ -82,24 +68,25 @@ const HomeSection = () => {
                                 GitHub
                             </CustomButton>
 
-                            {/*<IconButton
-                                color="inherit"
-                                //href="https://github.com/yourprofile"
-                                //target="_blank"
-                                sx={{
-                                    border: "2px solid ",
-                                    borderRadius: { xs: "0%", md: "50%" },
-                                    transition: "all 0.3s ease",
-                                    "&:hover": {
-                                        backgroundColor: "rgba(255,255,255,0.15)",
-                                        transform: "scale(1.1)",
-                                    },
-                                }}
-                            >
-                                <GitHubIcon fontSize="large" />
-                            </IconButton>*/}
+
                         </Stack>
                     </Box>
+
+                    {/* Picture */}
+                    {/*<Box
+                        component="img"
+                        src="/foto_minha_2022.jpg" // TODO se calhar meter antes a foto na secção de about
+                        alt="foto-rui"
+                        sx={{
+                            width: { xs: 200, md: 100 },
+                            height: { xs: 200, md: 100 },
+                            borderRadius: "50%",
+                            objectFit: "cover",
+                            border: 2,
+                            borderColor: "black"
+
+                        }}
+                    />*/}
                 </Stack>
             </Container>
         </Box>

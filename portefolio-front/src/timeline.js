@@ -66,27 +66,44 @@ export default function CustomTimeline({events, smallVersion}) {
                         <TimelineOppositeContent
                             variant="body2"
                             color="text.secondary"
-                            sx={{textAlign: 'left', minWidth: "30%"}}
+                            sx={{
+                                textAlign: 'left',
+                                minWidth: "30%",
+                                backgroundColor: "transparent",
+                            }}
                         >
-                            <MotionCard variant="transparent"
-                                        sx={{mb: 10}}
-                                        custom={index}
-                                        variants={itemVariants}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{once: true, amount: 0.2}}>
-                                <CardContent>
+                            <MotionCard
+                                elevation={0}
+                                sx={{
+                                    mb: 10,
+                                    backgroundColor: "transparent",
+                                    backgroundImage: "none",
+                                    boxShadow: "none",
+                                }}
+                                custom={index}
+                                variants={itemVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.2 }}
+                            >
+                                <CardContent
+                                    sx={{
+                                        textAlign: 'left',
+                                        minWidth: "30%",
+                                        backgroundColor: "transparent",
+                                    }}
+                                >
                                     <Typography variant="body2" color="text.secondary">
                                         {event.period}
                                     </Typography>
-                                    <Typography variant="h6" component="div" sx={{mb: 1}}>
+                                    <Typography variant="h6" component="div" sx={{ mb: 1 }}>
                                         {event.company}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        <LocationOnIcon color="primary" fontSize="inherit"/> {event.location}
+                                        <LocationOnIcon color="primary" fontSize="inherit" /> {event.location}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        <WorkIcon color="primary" fontSize="inherit"/> {event.type}
+                                        <WorkIcon color="primary" fontSize="inherit" /> {event.type}
                                     </Typography>
                                 </CardContent>
                             </MotionCard>

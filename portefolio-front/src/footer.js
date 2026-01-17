@@ -6,17 +6,15 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CustomButton from "./components/custombutton";
 
 const Footer = () => {
-    return (
-        <Box
+    return (<Box
             component="footer"
             sx={{
-                width: "100%",
-                mt: 6,
-                py: 4,
+                width: "100%", pb: 2,  background: "white"
             }}
         >
-            <Divider sx={{mb: 3, opacity: 0.6}}/>
-            <Container maxWidth={false} disableGutters sx={{px: {xs: 2, md: 6}}}>
+            <Divider sx={{mb: 3, border: "1px solid"}}/>
+            <Container maxWidth={false} disableGutters
+                       sx={{px: {xs: 2, md: 6}}}>
 
 
                 <Box
@@ -71,8 +69,7 @@ const Footer = () => {
                     All trademarks and logos are the property of their respective owners.
                 </Typography>
             </Container>
-        </Box>
-    );
+        </Box>);
 };
 
 export default Footer;
