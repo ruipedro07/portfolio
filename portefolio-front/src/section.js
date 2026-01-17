@@ -8,6 +8,7 @@ export default function Section({
                                     notShowTitle,
                                     sx = {},
                                     bgColor,
+                                    ...props
                                 }) {
     return (
         <Box
@@ -19,6 +20,7 @@ export default function Section({
                 flexDirection: "column",
                 ...sx,
             }}
+            {...props}
         >
             <Container>
                 {!notShowTitle && (

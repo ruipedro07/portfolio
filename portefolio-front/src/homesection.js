@@ -24,12 +24,28 @@ const HomeSection = () => {
         >
             <Container maxWidth="lg">
                 <Stack
-                    direction={{ xs: "column", md: "column" }}
-                    spacing={2}
+                    direction={{ xs: "column", md: "row" }}
+                    spacing={{ xs: 0, md: 5 }}
                     alignItems="center"
-                    justifyContent="space-between"
+                    justifyContent="center"
                 >
 
+
+                    {/* Picture */}
+                    <Box
+                        component="img"
+                        src="/foto_minha_2022.jpg"
+                        alt="foto-rui"
+                        sx={{
+                            width: {xs: 150, md: 200},
+                            height: {xs: 150, md: 200},
+                            borderRadius: "50%",
+                            objectFit: "cover",
+                            border: 2,
+                            borderColor: "white",
+
+                        }}
+                    />
 
                     {/* Intro + Buttons */}
                     <Box sx={{  maxWidth: 600 }}>
@@ -71,22 +87,6 @@ const HomeSection = () => {
 
                         </Stack>
                     </Box>
-
-                    {/* Picture */}
-                    {/*<Box
-                        component="img"
-                        src="/foto_minha_2022.jpg" // TODO se calhar meter antes a foto na secção de about
-                        alt="foto-rui"
-                        sx={{
-                            width: { xs: 200, md: 100 },
-                            height: { xs: 200, md: 100 },
-                            borderRadius: "50%",
-                            objectFit: "cover",
-                            border: 2,
-                            borderColor: "black"
-
-                        }}
-                    />*/}
                 </Stack>
             </Container>
         </Box>
