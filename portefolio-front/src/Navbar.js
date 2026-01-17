@@ -78,117 +78,138 @@ export default function Navbar() {
         return () => observer.disconnect();
     }, []);
 
-    const renderDesktopNavbar = () => (
-        <AppBar
-            position="fixed"
-            elevation={4}
-            sx={{
-                top: 16,
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "fit-content",
-                borderRadius: 999,
-                border: "2px solid black",
-                px: 0.75, // tighter horizontal padding
-                py: 0.25, // tighter vertical padding
-                background: "rgba(255,255,255,0.8)",
-                // backdropFilter: "blur(8px)",
-            }}
-        >
-            <Toolbar
-                disableGutters
+    const renderDesktopNavbar = () => {
+        const NAV_HEIGHT = 46;
+        const INSET = 6;
+        const GAP = 2;
+
+        return (
+            <AppBar
+                position="fixed"
+                elevation={0}
                 sx={{
-                    minHeight: "unset",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    px: 0, // remove extra internal padding
+                    top: 16,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "fit-content",
+                    bgcolor: "transparent", // quem desenha a pill é o Box abaixo
                 }}
             >
-                {SECTIONS.map((section) => {
-                    const isActive = activeSection === section.toLowerCase();
-                    return (
-                        <Button
-                            key={section}
-                            onClick={() => scrollToId(section.toLowerCase())}
-                            sx={{
-                                mx: 0.5, // reduced margin between buttons and edges
-                                borderRadius: "999px",
-                                textTransform: "none",
-                                color: isActive ? "#ffffff" : "black",
-                                bgcolor: isActive ? "#202020" : "transparent",
-                                "&:hover": {
-                                    bgcolor: isActive ? "black" : "rgba(0,0,0,0.15)",
-                                },
-                            }}
-                        >
-                            {t(section)}
-                        </Button>
-                    );
-                })}
-
-                {/* Language dropdown */}
-                <Button
-                    onClick={handleLangMenuOpen}
-                    endIcon={
-                        <KeyboardArrowDownIcon
-                            sx={{
-                                transition: "transform 0.3s",
-                                transform: isLangMenuOpen ? "rotate(180deg)" : "rotate(0deg)",
-                            }}
-                        />
-                    }
+                <Box
                     sx={{
-                        mx: 0.5, // reduced margin to fit tighter in the bar
-                        borderRadius: "999px",
-                        textTransform: "none",
-                        color: "black",
-                        bgcolor: "transparent",
-                        "&:hover": {
-                            bgcolor: "rgba(255,255,255,0.15)",
-                        },
+                        height: `${NAV_HEIGHT}px`,
+                        display: "flex",
+                        alignItems: "stretch", // <- crucial para os botões terem a altura toda
+                        justifyContent: "center",
+                        gap: `${GAP}px`,
+                        p: `${INSET}px`, // <- padding igual em todos os lados
+                        borderRadius: 999,
+                        border: "2px solid black",
+                        bgcolor: "rgba(255,255,255,0.8)",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                        overflow: "hidden", // ajuda a “cortar” perfeito nas extremidades
                     }}
                 >
-                    {activeLanguage}
-                </Button>
+                    {SECTIONS.map((section) => {
+                        const id = section.toLowerCase();
+                        const isActive = activeSection === id;
 
-                <Menu
-                    anchorEl={langAnchor}
-                    open={isLangMenuOpen}
-                    onClose={() => handleLangMenuClose(null)}
-                    anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-                    transformOrigin={{ vertical: "top", horizontal: "center" }}
-                    PaperProps={{
-                        sx: {
-                            display: "flex",
-                            borderRadius: "100px",
-                            bgcolor: "white",
-                            px: 1,
-                            py: 0.25,
-                            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                        },
-                    }}
-                >
-                    {LANGUAGES.map((lang) => (
-                        <MenuItem
-                            key={lang}
-                            onClick={() => handleLangMenuClose(lang)}
-                            sx={{
+                        return (
+                            <Button
+                                key={section}
+                                onClick={() => scrollToId(id)}
+                                disableRipple
+                                sx={{
+                                    height: "100%",       // <- ocupa toda a altura interna da pill
+                                    m: 0,
+                                    minWidth: 0,
+                                    borderRadius: 999,    // pill interna
+                                    textTransform: "none",
+                                    px: 1.5,
+                                    py: 0,                // <- evita “encolher” a altura visual
+                                    lineHeight: 1,
+
+                                    color: isActive ? "#fff" : "black",
+                                    bgcolor: isActive ? "#202020" : "transparent",
+                                    "&:hover": {
+                                        bgcolor: isActive ? "black" : "rgba(0,0,0,0.12)",
+                                    },
+                                }}
+                            >
+                                {t(section)}
+                            </Button>
+                        );
+                    })}
+
+                    {/* Language dropdown */}
+                    <Button
+                        onClick={handleLangMenuOpen}
+                        endIcon={
+                            <KeyboardArrowDownIcon
+                                sx={{
+                                    transition: "transform 0.3s",
+                                    transform: isLangMenuOpen ? "rotate(180deg)" : "rotate(0deg)",
+                                }}
+                            />
+                        }
+                        sx={{
+                            height: "100%",
+                            m: 0,
+                            minWidth: 0,
+                            borderRadius: 999,
+                            textTransform: "none",
+                            px: 1.5,
+                            py: 0,
+                            lineHeight: 1,
+
+                            color: "black",
+                            bgcolor: "transparent",
+                            "&:hover": {
+                                bgcolor: "rgba(0,0,0,0.12)",
+                            },
+                        }}
+                    >
+                        {activeLanguage}
+                    </Button>
+
+                    <Menu
+                        anchorEl={langAnchor}
+                        open={isLangMenuOpen}
+                        onClose={() => handleLangMenuClose(null)}
+                        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                        transformOrigin={{ vertical: "top", horizontal: "center" }}
+                        PaperProps={{
+                            sx: {
+                                display: "flex",
                                 borderRadius: "100px",
-                                mx: 0.5,
-                                color: "black",
-                                "&:hover": {
-                                    bgcolor: "rgba(255,255,255,0.15)",
-                                },
-                            }}
-                        >
-                            {lang}
-                        </MenuItem>
-                    ))}
-                </Menu>
-            </Toolbar>
-        </AppBar>
-    );
+                                bgcolor: "white",
+                                px: 1,
+                                py: 0.25,
+                                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                            },
+                        }}
+                    >
+                        {LANGUAGES.map((lang) => (
+                            <MenuItem
+                                key={lang}
+                                onClick={() => handleLangMenuClose(lang)}
+                                sx={{
+                                    borderRadius: "100px",
+                                    mx: 0.5,
+                                    color: "black",
+                                    "&:hover": {
+                                        bgcolor: "rgba(0,0,0,0.08)",
+                                    },
+                                }}
+                            >
+                                {lang}
+                            </MenuItem>
+                        ))}
+                    </Menu>
+                </Box>
+            </AppBar>
+        );
+    };
 
     const renderMobileNavbar = () => (
         <AppBar position="fixed" elevation={4} sx={{ top: 0, left: 0, right: 0, px: 1, py: 0.5, background: "transparent",  boxShadow: "none" }}>
