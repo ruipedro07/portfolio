@@ -39,7 +39,7 @@ const HomeSection = () => {
                             borderRadius: "50%",
                             objectFit: "cover",
                             border: 2,
-                            borderColor: "white"
+                            borderColor: "black"
 
                         }}
                     />
@@ -57,7 +57,7 @@ const HomeSection = () => {
 
                         <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
                             <Button
-                                color="primary"
+                                color="black"
                                 onClick={scrollToContact}
                                 sx={{
                                     border: "2px solid",
