@@ -1,12 +1,14 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button, CircularProgress, Box } from "@mui/material";
 
 const CustomButton = ({
                           children,
-                          variant = "primary",        // "primary" | "secondary"
+                          variant = "primary", // "primary" | "secondary"
                           startIcon,
                           endIcon,
                           sx,
+                          loading = false,
+                          disabled,
                           ...props
                       }) => {
     const isPrimary = variant === "primary";
@@ -16,6 +18,7 @@ const CustomButton = ({
         textTransform: "none",
         fontWeight: 600,
         transition: "all 0.3s ease",
+        position: "relative", // needed for overlay spinner
         ...(isIconOnly
             ? {
                 borderRadius: "50%",
@@ -38,35 +41,69 @@ const CustomButton = ({
         ? {
             backgroundColor: "black",
             color: "white",
-
             "&:hover": {
                 backgroundColor: "#333",
                 transform: "scale(1.03)",
+            },
+            // keep colors when disabled (while loading)
+            "&.Mui-disabled": {
+                backgroundColor: "black",
+                color: "white",
+                opacity: 0.7,
             },
         }
         : {
             backgroundColor: "white",
             color: "black",
-
             "&:hover": {
                 backgroundColor: "#f5f5f5",
                 transform: "scale(1.03)",
             },
+            "&.Mui-disabled": {
+                backgroundColor: "white",
+                color: "black",
+                opacity: 0.7,
+            },
         };
-
-    // For icon-only, we render the icon as the button child directly
-    const content = isIconOnly ? startIcon || endIcon : children;
 
     return (
         <Button
-            // Only use MUI's startIcon/endIcon when not icon-only,
-            // otherwise they add unwanted spacing.
+            // normal icons only when not icon-only
             startIcon={!isIconOnly ? startIcon : undefined}
             endIcon={!isIconOnly ? endIcon : undefined}
             sx={{ ...baseStyles, ...variantStyles, ...sx }}
+            disabled={loading || disabled}
             {...props}
         >
-            {content}
+            {/* Content (text / icon) */}
+            <Box
+                component="span"
+                sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    // For icon-only, hide the underlying icon when loading so spinner is clear
+                    visibility: loading && isIconOnly ? "hidden" : "visible",
+                    // For text buttons, you can slightly fade text when loading (optional)
+                    opacity: loading && !isIconOnly ? 0.8 : 1,
+                }}
+            >
+                {isIconOnly ? startIcon || endIcon : children}
+            </Box>
+
+            {/* Overlay spinner when loading */}
+            {loading && (
+                <CircularProgress
+                    size={isIconOnly ? 24 : 20}
+                    thickness={4}
+                    sx={{
+                        color: isPrimary ? "white" : "black",
+                        position: "absolute",
+                        inset: 0,
+                        margin: "auto",
+                    }}
+                />
+            )}
         </Button>
     );
 };

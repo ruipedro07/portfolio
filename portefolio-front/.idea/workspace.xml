@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="custom cutton">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="icon button refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/custombutton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custombutton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/footer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,7 @@
       <workItem from="1768509809443" duration="12312000" />
       <workItem from="1768602788971" duration="6292000" />
       <workItem from="1768610964354" duration="1215000" />
-      <workItem from="1768652325260" duration="4249000" />
+      <workItem from="1768652325260" duration="5080000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -388,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768660138674</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="icon button refactor">
+      <option name="closed" value="true" />
+      <created>1768660655159</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1768660655159</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start of experience timeline" />
     <MESSAGE value="finished experience timeline" />
     <MESSAGE value="changed contact email" />
     <MESSAGE value="contact form in separate js file" />
@@ -431,7 +437,8 @@
     <MESSAGE value="navbar refactor" />
     <MESSAGE value="footer" />
     <MESSAGE value="custom cutton" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom cutton" />
+    <MESSAGE value="icon button refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="icon button refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

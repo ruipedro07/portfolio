@@ -168,19 +168,9 @@ export default function Contact({
                         type="submit"
                         disabled={isDisabled}
                         endIcon={<SendIcon/>}
+                        loading={loading}
                     >
-                        {loading ? (
-                            <>
-                                <CircularProgress
-                                    size={20}
-                                    color="white"
-                                    sx={{ mr: 1 }}
-                                />
-
-                            </>
-                        ) : (
-                            "Send message"
-                        )}
+                        Send message
                     </CustomButton>
 
 
