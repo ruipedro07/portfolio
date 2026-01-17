@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="navbar refactor">
-      <change afterPath="$PROJECT_DIR$/src/footer.js" afterDir="false" />
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="footer">
+      <change afterPath="$PROJECT_DIR$/src/components/custombutton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/homesection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/homesection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,7 @@
       <workItem from="1768509809443" duration="12312000" />
       <workItem from="1768602788971" duration="6292000" />
       <workItem from="1768610964354" duration="1215000" />
-      <workItem from="1768652325260" duration="1216000" />
+      <workItem from="1768652325260" duration="3769000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -372,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768611972786</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="footer">
+      <option name="closed" value="true" />
+      <created>1768653599513</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1768653599513</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +399,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed language bug" />
     <MESSAGE value="Changed page title and favicon" />
     <MESSAGE value="Start of experience timeline" />
     <MESSAGE value="finished experience timeline" />
@@ -415,7 +423,8 @@
     <MESSAGE value="navbar updates" />
     <MESSAGE value="black buttons" />
     <MESSAGE value="navbar refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="navbar refactor" />
+    <MESSAGE value="footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

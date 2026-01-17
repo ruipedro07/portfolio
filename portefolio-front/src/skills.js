@@ -53,6 +53,7 @@ const skillsData = [
         level: 3,
         skills: [
             {name: "RAG", level: 5},
+            {name: "Spring AI", level: 5},
             {name: "LLMs", level: 4},
             {name: "Fine-tuning", level: 2},
             {name: "Vector Databases", level: 2},

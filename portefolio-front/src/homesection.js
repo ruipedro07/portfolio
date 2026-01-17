@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, Container, Stack, Typography , IconButton} from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import CustomButton from "./components/custombutton";
 
 const HomeSection = () => {
     const scrollToContact = () => {
@@ -56,39 +57,32 @@ const HomeSection = () => {
                         </Typography>
 
                         <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                            <Button
-                                color="black"
+                            <CustomButton
+                                variant="primary"
                                 onClick={scrollToContact}
-                                sx={{
-                                    border: "2px solid",
-                                    transition: "all 0.3s ease",
-                                    "&:hover": {
-                                        backgroundColor: "rgba(255,255,255,0.15)",
-                                        transform: "scale(1.1)",
-                                    },
-                                }}
                             >
                                 Contact Me
-                            </Button>
+                            </CustomButton>
 
-                            <IconButton
-                                color="inherit"
+                            <CustomButton
+                                variant="secondary"
+                                startIcon={<LinkedInIcon />}
                                 href="https://www.linkedin.com/in/ruiribeiro-dev/"
                                 target="_blank"
-                                sx={{
-                                    border: "2px solid ",
-                                    borderRadius: { xs: "0%", md: "50%" },
-                                    transition: "all 0.3s ease",
-                                    "&:hover": {
-                                        backgroundColor: "rgba(255,255,255,0.15)",
-                                        transform: "scale(1.1)",
-                                    },
-                                }}
                             >
-                                <LinkedInIcon fontSize="large" />
-                            </IconButton>
+                                LinkedIn
+                            </CustomButton>
 
-                            <IconButton
+                            <CustomButton
+                                variant="secondary"
+                                startIcon={<GitHubIcon />}
+                               // href="https://www.linkedin.com/in/ruiribeiro-dev/"
+                                target="_blank"
+                            >
+                                GitHub
+                            </CustomButton>
+
+                            {/*<IconButton
                                 color="inherit"
                                 //href="https://github.com/yourprofile"
                                 //target="_blank"
@@ -103,7 +97,7 @@ const HomeSection = () => {
                                 }}
                             >
                                 <GitHubIcon fontSize="large" />
-                            </IconButton>
+                            </IconButton>*/}
                         </Stack>
                     </Box>
                 </Stack>

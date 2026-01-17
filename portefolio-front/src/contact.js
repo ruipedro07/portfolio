@@ -12,6 +12,8 @@ import {
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PhoneIcon from '@mui/icons-material/Phone';
+import CustomButton from "./components/custombutton";
+import SendIcon from '@mui/icons-material/Send';
 
 export default function Contact({
                                     formSubmitError,
@@ -161,11 +163,11 @@ export default function Contact({
                         disabled={isDisabled}
                     />
 
-                    <Button
+                    <CustomButton
+                        variant="primary"
                         type="submit"
-                        variant="contained"
                         disabled={isDisabled}
-                        sx={{ height: 40 }}
+                        endIcon={<SendIcon/>}
                     >
                         {loading ? (
                             <>
@@ -179,7 +181,9 @@ export default function Contact({
                         ) : (
                             "Send message"
                         )}
-                    </Button>
+                    </CustomButton>
+
+
                 </Box>
             </Box>
         </Box>
