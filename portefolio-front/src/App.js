@@ -75,7 +75,7 @@ const Portfolio = ({
                 {/* Skills */}
                 <Section
                     id="about"
-                    title={t("About")}
+                    title={t("About me")}
                     bgColor="transparent"
                 >
 
@@ -112,7 +112,7 @@ const Portfolio = ({
                 {/* Education */}
                 <Section
                     id="education"
-                    title={t("Education & Certifications")}
+                    title={t("Education")}
                     bgColor="transparent"
                 >
                     <Education />

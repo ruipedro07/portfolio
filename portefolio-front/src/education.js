@@ -3,7 +3,7 @@ import {Typography, Paper, Box, List, ListItem, ListItemIcon, ListItemText, Avat
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import CustomTimeline from "./timeline";
 import Link from "@mui/material/Link";
-
+import LinkIcon from '@mui/icons-material/Link';
 
 export default function Education() {
 
@@ -113,16 +113,22 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
                                 />
                             </ListItemIcon>
 
-                            <ListItemText primary={
-                                <Link
-                                    href={c.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="hover"
-                                >
-                                    {c.title}
-                                </Link>
-                            } secondary={c.date}/>
+                            <ListItemText
+                                primary={
+                                    <Link
+                                        href={c.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        underline="hover"
+                                        sx={{ display: "inline-flex", alignItems: "center", gap: 0.5 }}
+                                    >
+                                        <LinkIcon sx={{ fontSize: 16 }} />
+                                        {c.title}
+
+                                    </Link>
+                                }
+                                secondary={c.date}
+                            />
                         </ListItem>
                     ))}
                 </List>
@@ -133,16 +139,22 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
                 <List dense>
                     {awards.map((a, i) => (
                         <ListItem key={i} disableGutters>
-                            <ListItemText primary={
-                                <Link
-                                    href={a.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="hover"
-                                >
-                                    {a.title}
-                                </Link>
-                            } secondary={a.date}/>
+                            <ListItemText
+                                primary={
+                                    <Link
+                                        href={a.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        underline="hover"
+                                        sx={{ display: "inline-flex", alignItems: "center", gap: 0.5 }}
+                                    >
+                                        <LinkIcon sx={{ fontSize: 16 }} />
+                                        {a.title}
+
+                                    </Link>
+                                }
+                                secondary={a.date}
+                            />
                         </ListItem>
                     ))}
                 </List>
