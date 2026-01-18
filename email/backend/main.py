@@ -6,9 +6,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
-from pydantic import BaseModel
-from openai import OpenAI
-from fastapi.responses import StreamingResponse
+
+from backend.model.chatRequest import ChatRequest
+from backend.service.chatService import chat
 
 app = FastAPI(root_path="/api")
 
@@ -25,12 +25,11 @@ SMTP_PORT = 587
 EMAIL_ADDRESS = "contact@ruiribeiro.dev"  # Your email
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
-#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 @app.post("/contact")
 async def contact_form(name: str = Form(...), email: EmailStr = Form(...), message: str = Form(...)):
     try:
-        # Send email to you
         msg_to_you = MIMEMultipart()
         msg_to_you["From"] = EMAIL_ADDRESS
         msg_to_you["To"] = EMAIL_ADDRESS
@@ -59,37 +58,6 @@ async def contact_form(name: str = Form(...), email: EmailStr = Form(...), messa
         raise HTTPException(status_code=500, detail=str(e))
 
 
-
-#class ChatRequest(BaseModel):
-#    message: str
-
-# @app.post("/chat")
-# async def chat_endpoint(payload: ChatRequest):
-#     # Send the user's message to the Chat Completions endpoint
-#     completion = client.chat.completions.create(
-#         model="gpt-3.5-turbo",  # or "gpt-4o-mini", etc.
-#         messages=[
-#             {"role": "user", "content": payload.message}
-#         ]
-#     )
-#     # Extract and return the model’s reply
-#     reply = completion.choices[0].message.content
-#     return {"response": reply}
-#
-#
-# @app.post("/chat/stream")
-# async def chat_stream(payload: ChatRequest):
-#
-#     def generator():
-#         stream = client.chat.completions.create(
-#             model="gpt-3.5-turbo",
-#             messages=[{"role": "user", "content": payload.message}],
-#             stream=True
-#         )
-#
-#         for chunk in stream:
-#             content = chunk.choices[0].delta.content
-#             if content:
-#                 yield content
-#
-#     return StreamingResponse(generator(), media_type="text/plain")
+@app.post("/chat")
+async def chat_endpoint(payload: ChatRequest):
+    return chat(payload)

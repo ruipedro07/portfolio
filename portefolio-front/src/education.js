@@ -35,7 +35,7 @@ export default function Education() {
         },
     ];
 
-    const events = [
+    const academic = [
 
         {
             id: 1,
@@ -87,7 +87,7 @@ Order of Engineers, recognized throughout Europe, Latin America and Asia.
         >
             {/* LEFT TODO adicionar cadeiras importantes nos cursos?  */}
             <Box sx={{minWidth: 0}}>
-                <CustomTimeline smallVersion={true} events={events}/>
+                <CustomTimeline smallVersion={true} events={academic}/>
             </Box>
 
             {/* RIGHT: certifications + awards */}

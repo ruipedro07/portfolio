@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, {useRef, useEffect} from "react";
 import {
     Box,
     Paper,
@@ -7,23 +7,35 @@ import {
     IconButton,
     Stack,
     Divider,
-    useMediaQuery,
     useTheme,
     InputAdornment,
     Collapse,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
+import {
+    SEND_CHAT_MESSAGE,
+    SET_CHAT_EXPANDED, SET_CHAT_HAS_SCROLLED_PAGE, SET_CHAT_INPUT
+} from "../actions/actionTypes";
+import {connect} from "react-redux";
+import ReactMarkdown from "react-markdown";
 
-const ChatSection = ({ maxWidth = 800 }) => {
-    const [expanded, setExpanded] = useState(false);
-    const [messages, setMessages] = useState([]);
-    const [inputValue, setInputValue] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
-    const [hasAutoScrolledPage, setHasAutoScrolledPage] = useState(false);
+const ChatSection = ({
+                         maxWidth = 800,
+                         expanded,
+                         messages,
+                         hasAutoScrolledPage,
+                         isLoading,
+                         inputValue,
+                         setExpanded,
+                         setHasAutoScrolledPage,
+                         setInputValue,
+                         sendChatMessage,
+                     }) => {
+
 
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
 
     const messageListRef = useRef(null);
     const expandedCardRef = useRef(null);
@@ -51,26 +63,17 @@ const ChatSection = ({ maxWidth = 800 }) => {
     }, [expanded, messages, isLoading]);
 
     const sendMessage = () => {
+
+
         const text = inputValue.trim();
         if (!text || isLoading) return;
 
-        const userMessage = { id: Date.now(), role: "user", content: text };
-        setMessages((prev) => [...prev, userMessage]);
-        setInputValue("");
+        const userMessage = {role: "user", content: text};
 
+        setInputValue("");
         if (!expanded) setExpanded(true);
 
-        setIsLoading(true);
-        setTimeout(() => {
-            const assistantMessage = {
-                id: Date.now() + 1,
-                role: "assistant",
-                content:
-                    "This is a placeholder answer. Once your RAG backend is connected, this will be an AI-generated response about Rui.",
-            };
-            setMessages((prev) => [...prev, assistantMessage]);
-            setIsLoading(false);
-        }, 900);
+        sendChatMessage(userMessage, messages)
     };
 
     const handleSubmit = (e) => {
@@ -114,7 +117,27 @@ const ChatSection = ({ maxWidth = 800 }) => {
                                 whiteSpace: "pre-wrap",
                             }}
                         >
+
+
                             {msg.content}
+
+                            {/* <ReactMarkdown
+                                components={{
+                                    p: ({ node, ...props }) => (
+                                        <Typography variant="body1" {...props} />
+                                    ),
+                                    strong: ({ node, ...props }) => (
+                                        <Typography component="span" variant="body1" fontWeight="bold" {...props} />
+                                    ),
+                                    li: ({ node, ...props }) => (
+                                        <li>
+                                            <Typography component="span" variant="body1" {...props} />
+                                        </li>
+                                    ),
+                                }}
+                            >
+
+                            </ReactMarkdown> */}
                         </Box>
                     </Box>
                 );
@@ -150,20 +173,20 @@ const ChatSection = ({ maxWidth = 800 }) => {
             }}
         >
             {/* Collapsed preview */}
-            <Collapse in={!expanded} unmountOnExit sx={{ width: "100%" }}>
+            <Collapse in={!expanded} unmountOnExit sx={{width: "100%"}}>
                 <Paper
                     elevation={3}
                     sx={{
                         width: "100%",
                         maxWidth,
                         borderRadius: 3,
-                        p: { xs: 1.2, sm: 1.5 },
+                        p: {xs: 1.2, sm: 1.5},
                         bgcolor:
                             theme.palette.mode === "dark" ? "background.paper" : "#f9fafb",
                         mx: "auto",
                     }}
                 >
-                    <Typography variant="body2" fontWeight={600} sx={{ mb: 0.6 }}>
+                    <Typography variant="body2" fontWeight={600} sx={{mb: 0.6}}>
                         Ask Rui’s AI assistant
                     </Typography>
 
@@ -181,7 +204,7 @@ const ChatSection = ({ maxWidth = 800 }) => {
                                     <InputAdornment position="start">
                                         <SmartToyIcon
                                             fontSize="small"
-                                            sx={{ color: "text.secondary" }}
+                                            sx={{color: "text.secondary"}}
                                         />
                                     </InputAdornment>
                                 ),
@@ -190,9 +213,9 @@ const ChatSection = ({ maxWidth = 800 }) => {
                                         type="submit"
                                         color="primary"
                                         disabled={!inputValue.trim() || isLoading}
-                                        sx={{ ml: 0.5 }}
+                                        sx={{ml: 0.5}}
                                     >
-                                        <SendIcon fontSize="small" />
+                                        <SendIcon fontSize="small"/>
                                     </IconButton>
                                 ),
                                 sx: {
@@ -211,7 +234,7 @@ const ChatSection = ({ maxWidth = 800 }) => {
             </Collapse>
 
             {/* Expanded chat */}
-            <Collapse in={expanded} unmountOnExit sx={{ width: "100%" }}>
+            <Collapse in={expanded} unmountOnExit sx={{width: "100%"}}>
                 <Paper
                     ref={expandedCardRef}
                     elevation={3}
@@ -221,7 +244,7 @@ const ChatSection = ({ maxWidth = 800 }) => {
                         mx: "auto",
                         maxHeight: "calc(100vh - 120px)",
                         borderRadius: 3,
-                        p: { xs: 2, sm: 3 },
+                        p: {xs: 2, sm: 3},
                         bgcolor:
                             theme.palette.mode === "dark" ? "background.paper" : "#f9fafb",
                         display: "flex",
@@ -243,7 +266,7 @@ const ChatSection = ({ maxWidth = 800 }) => {
                                 color: "primary.contrastText",
                             }}
                         >
-                            <SmartToyIcon fontSize="small" />
+                            <SmartToyIcon fontSize="small"/>
                         </Box>
                         <Box>
                             <Typography variant="subtitle1" fontWeight={600}>
@@ -252,29 +275,29 @@ const ChatSection = ({ maxWidth = 800 }) => {
                             <Typography
                                 variant="body2"
                                 color="text.secondary"
-                                sx={{ fontSize: 12 }}
+                                sx={{fontSize: 12}}
                             >
                                 Ask about Rui’s experience, tech stack, projects, or background.
                             </Typography>
                         </Box>
                     </Stack>
 
-                    <Divider sx={{ my: 1 }} />
+                    <Divider sx={{my: 1}}/>
 
                     <Box
                         ref={messageListRef}
                         sx={{
                             flex: 1,
-                            minHeight: isMobile ? 240 : 280,
+                            maxHeight: "50vh",
                             overflowY: "auto",
                             pr: 1,
                             pb: 1,
                         }}
                     >
-                        <MessageList />
+                        <MessageList/>
                     </Box>
 
-                    <Box component="form" onSubmit={handleSubmit} sx={{ pt: 0.5 }}>
+                    <Box component="form" onSubmit={handleSubmit} sx={{pt: 0.5}}>
                         <TextField
                             fullWidth
                             autoComplete="off"
@@ -304,9 +327,9 @@ const ChatSection = ({ maxWidth = 800 }) => {
                                         type="submit"
                                         color="primary"
                                         disabled={!inputValue.trim() || isLoading}
-                                        sx={{ ml: 0.5 }}
+                                        sx={{ml: 0.5}}
                                     >
-                                        <SendIcon fontSize="small" />
+                                        <SendIcon fontSize="small"/>
                                     </IconButton>
                                 ),
                             }}
@@ -318,4 +341,22 @@ const ChatSection = ({ maxWidth = 800 }) => {
     );
 };
 
-export default ChatSection;
+const mapStateToProps = (state) => ({
+    expanded: state.chat.expanded,
+    messages: state.chat.messages,
+    hasAutoScrolledPage: state.chat.hasAutoScrolledPage,
+    isLoading: state.chat.isLoading,
+    inputValue: state.chat.inputValue,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    setExpanded: (expanded) => dispatch({type: SET_CHAT_EXPANDED, payload: expanded}),
+    setHasAutoScrolledPage: (value) => dispatch({type: SET_CHAT_HAS_SCROLLED_PAGE, payload: value}),
+    setInputValue: (input) => dispatch({type: SET_CHAT_INPUT, payload: input}),
+    sendChatMessage: (message, messages) => dispatch({
+        type: SEND_CHAT_MESSAGE,
+        payload: {message: message, chatHistory: messages}
+    }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatSection);
