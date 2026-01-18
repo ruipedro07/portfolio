@@ -6,7 +6,8 @@ import {
     CardActionArea,
     Typography,
     Stack,
-    useTheme
+    Chip,
+    useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { CustomChip } from "./components/customchip";
@@ -16,21 +17,34 @@ const projectsData = [
     {
         title: "RAG Knowledge Assistant",
         description:
-            "Retrieval-Augmented Generation assistant over company documentation with chat UI.",
+            "Developed a RAG-based system to optimize technical knowledge retrieval in enterprise support environments. Built data ingestion and indexing pipelines using Spring Boot / Spring AI, Qdrant, and SQL Server, with integrations to Confluence and Control-M. The project focuses on scalable data processing, vector search optimization, and performance evaluation of retrieval configurations.",
         image: "/images/chat.png",
         techStack: ["RAG", "Spring AI", "LLMs", "Qdrant", "React", "MS SQL Server"],
         url: "https://recipp.ipp.pt/entities/publication/1bb049bb-97d1-48db-8202-57527a0a50e3",
+        status: "Finished"
     },
 
     {
         title: "DeFile",
         description:
-            "Retrieval-Augmented Generation assistant over company documentation with chat UI.",
+            "A decentralized application built with Solidity, IPFS, and React, focused on distributed data storage and metadata management. Files are ingested into IPFS, while their content identifiers (CIDs) and metadata are stored on-chain via smart contracts, enabling immutable and verifiable data references. The application integrates a Web3 wallet for authentication and emphasizes data integrity, traceability, and decentralized data access.",
         image: "/images/defile.jpeg",
-        techStack: ["RAG", "Spring AI", "LLMs", "Qdrant", "React", "MS SQL Server"],
+        techStack: ["Blockchain","Smart Contracts",  "React", "Solidity", "IPFS"],
+        status: "On going"
     },
 
 ];
+
+function getStatusColor(status) {
+    switch (status) {
+        case "Finished":
+            return "success";
+        case "On going":
+            return "warning";
+        default:
+            return "default";
+    }
+}
 
 export default function Projects() {
     const theme = useTheme();
@@ -74,7 +88,7 @@ export default function Projects() {
                             height: "100%",
                             borderRadius: 3,
                             border: `1px solid ${theme.palette.divider}`,
-                            overflow: "hidden", // ensures image flush with card borders
+                            overflow: "hidden", // image flush with borders
                             transition: "all 0.3s ease",
                             "&:hover": {
                                 transform: "translateY(-6px)",
@@ -94,7 +108,7 @@ export default function Projects() {
                                 height: "100%",
                             }}
                         >
-                            {/* Image flush with card borders, no margins */}
+                            {/* Image on top, no margins */}
                             <CardMedia
                                 component="img"
                                 image={project.image}
@@ -114,9 +128,23 @@ export default function Projects() {
                                 }}
                             >
                                 <Stack spacing={1.5} sx={{ height: "100%" }}>
-                                    <Typography variant="h6" fontWeight={600}>
-                                        {project.title}
-                                    </Typography>
+                                    {/* Title + status row */}
+                                    <Stack
+                                        direction="row"
+                                        alignItems="center"
+                                        justifyContent="space-between"
+                                        spacing={1}
+                                    >
+                                        <Typography variant="h6" fontWeight={600}>
+                                            {project.title}
+                                        </Typography>
+                                        <Chip
+                                            label={project.status}
+                                            size="small"
+                                            color={getStatusColor(project.status)}
+                                            sx={{ fontWeight: 500 }}
+                                        />
+                                    </Stack>
 
                                     <Typography
                                         variant="body2"
