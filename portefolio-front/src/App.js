@@ -14,7 +14,7 @@ import {
 import Contact from "./contact";
 import Skills from "./skills";
 import Education from "./education";
-import HomeSection from "./homesection";
+import Home from "./home";
 import Footer from "./footer";
 import About from "./about";
 import Projects from "./projects";
@@ -68,7 +68,7 @@ const Portfolio = ({
                         bgColor="transparent"
                         sx={{ py: 0, m: 0, minHeight: "calc(100vh)" }}
                     >
-                        <HomeSection />
+                        <Home />
                     </Section>
                 </Box>
 
