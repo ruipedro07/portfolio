@@ -26,7 +26,7 @@ const skillsData = [
             {name: "HDFS", level: 5},
             {name: "Spark", level: 5},
             {name: "ETL Pipelines", level: 5},
-            {name: "Kafka", level: 5},
+            {name: "Kafka", level: 4},
             {name: "Hive", level: 5},
             {name: "MS SQL Server", level: 5},
             {name: "MySql", level: 5},
@@ -53,10 +53,10 @@ const skillsData = [
         level: 3,
         skills: [
             {name: "RAG", level: 5},
-            {name: "Spring AI", level: 5},
+            {name: "Spring AI", level: 4},
             {name: "LLMs", level: 4},
             {name: "Fine-tuning", level: 2},
-            {name: "Vector Databases", level: 2},
+            {name: "Vector Databases", level: 3},
         ]
     },
 
@@ -76,13 +76,13 @@ const skillsData = [
         icon: <BuildIcon/>,
         level: 4,
         skills: [
-            {name: "OpenShift", level: 4},
+            {name: "OpenShift", level: 3},
             {name: "Github Actions", level: 4},
             {name: "Jenkins", level: 4},
-            {name: "Docker", level: 4},
+            {name: "Docker", level: 5},
             {name: "CI/CD", level: 4},
-            {name: "Ansible", level: 4},
-            {name: "Terraform", level: 4},
+            {name: "Ansible", level: 3},
+            {name: "Terraform", level: 3},
 
 
         ]

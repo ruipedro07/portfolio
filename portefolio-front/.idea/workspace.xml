@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="projects section">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="improved chat box">
+      <change afterPath="$PROJECT_DIR$/../email/backend/model/chatRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email/backend/service/chatService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/chatActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/chatReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sagas/chatSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../email/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../email/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/education.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rootSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/portefolioSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/portefolioSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
+    </list>
+    <list id="d3a5d341-c9ab-4267-b1a4-f3a96821f1ab" name="not commit" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/projects.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,40 +55,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/12659/Documents/portefolio/portefolio-front/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.npm start.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.4.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "chatbot-rag",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/12659/Documents/portefolio/portefolio-front/src/sagas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.npm start.executor": "Run",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.4.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\12659\Documents\portefolio\portefolio-front\src\sagas" />
+      <recent name="C:\Users\12659\Documents\portefolio\portefolio-front\src\actions" />
+      <recent name="C:\Users\12659\Documents\portefolio\portefolio-front\src\reducers" />
       <recent name="C:\Users\12659\Documents\portefolio\portefolio-front\src" />
       <recent name="C:\Users\12659\Documents\portefolio\src\actions" />
-      <recent name="C:\Users\12659\Documents\portefolio\src\reducers" />
-      <recent name="C:\Users\12659\Documents\portefolio\src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -93,6 +110,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="" />
+      <changelist id="d3a5d341-c9ab-4267-b1a4-f3a96821f1ab" name="not commit" comment="" />
       <created>1756514880711</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -136,7 +154,9 @@
       <workItem from="1768509809443" duration="12312000" />
       <workItem from="1768602788971" duration="6292000" />
       <workItem from="1768610964354" duration="1215000" />
-      <workItem from="1768652325260" duration="20324000" />
+      <workItem from="1768652325260" duration="21008000" />
+      <workItem from="1768745076410" duration="1315000" />
+      <workItem from="1768761662237" duration="1199000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -426,7 +446,47 @@
       <option name="project" value="LOCAL" />
       <updated>1768693441497</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="projects section descriptions of projects">
+      <option name="closed" value="true" />
+      <created>1768694516681</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1768694516681</updated>
+    </task>
+    <task id="LOCAL-00038" summary="removed unused code">
+      <option name="closed" value="true" />
+      <created>1768694564161</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1768694564161</updated>
+    </task>
+    <task id="LOCAL-00039" summary="link icon in the education section">
+      <option name="closed" value="true" />
+      <created>1768746752459</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1768746752459</updated>
+    </task>
+    <task id="LOCAL-00040" summary="start of chat AI RAG">
+      <option name="closed" value="true" />
+      <created>1768762998752</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1768762998752</updated>
+    </task>
+    <task id="LOCAL-00041" summary="improved chat box">
+      <option name="closed" value="true" />
+      <created>1768768680594</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1768768680594</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,11 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="contact section done" />
-    <MESSAGE value="mobile navbar" />
-    <MESSAGE value="start of skill section" />
-    <MESSAGE value="skills with level done" />
-    <MESSAGE value="positions adjust" />
     <MESSAGE value="skills adjusted" />
     <MESSAGE value="skills chips adjusted" />
     <MESSAGE value="animations" />
@@ -469,7 +524,12 @@
     <MESSAGE value="about section and code refactors" />
     <MESSAGE value="avatar in home section refactores" />
     <MESSAGE value="projects section" />
-    <option name="LAST_COMMIT_MESSAGE" value="projects section" />
+    <MESSAGE value="projects section descriptions of projects" />
+    <MESSAGE value="removed unused code" />
+    <MESSAGE value="link icon in the education section" />
+    <MESSAGE value="start of chat AI RAG" />
+    <MESSAGE value="improved chat box" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved chat box" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

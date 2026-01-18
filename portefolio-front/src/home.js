@@ -3,14 +3,15 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CustomButton from "./components/custombutton";
+import ChatSection from "./components/chat";
 
-const HomeSection = () => {
+const Home = () => {
     const scrollToContact = () => {
         const el = document.getElementById("contact");
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
+        if (el) el.scrollIntoView({ behavior: "smooth" });
     };
+
+    const contentMaxWidth = 860; // keeps hero + chat the same width
 
     return (
         <Box
@@ -19,7 +20,7 @@ const HomeSection = () => {
                 display: "flex",
                 alignItems: "center",
                 width: "100%",
-                pt: { xs: 0, md: 0 }, // add padding-top on small screens
+                pt: { xs: 0, md: 10 },
             }}
         >
             <Container maxWidth="lg">
@@ -28,41 +29,51 @@ const HomeSection = () => {
                     spacing={{ xs: 2, md: 5 }}
                     alignItems="center"
                     justifyContent="center"
+                    sx={{
+                        width: "100%",
+                        maxWidth: contentMaxWidth,
+                        mx: "auto",
+                    }}
                 >
-
-
                     {/* Picture */}
                     <Box
                         component="img"
                         src="/foto_minha_2022.jpg"
                         alt="foto-rui"
                         sx={{
-                            width: {xs: 150, md: 200},
-                            height: {xs: 150, md: 200},
+                            width: { xs: 150, md: 200 },
+                            height: { xs: 150, md: 200 },
                             borderRadius: "50%",
                             objectFit: "cover",
                             border: 2,
                             borderColor: "white",
-
                         }}
                     />
 
                     {/* Intro + Buttons */}
-                    <Box sx={{  maxWidth: 600 }}>
+                    <Box sx={{ maxWidth: 600 }}>
                         <Typography variant="h3" fontWeight={900} gutterBottom>
                             Hi, I'm Rui 👋
                         </Typography>
-                        <Typography variant="h6" fontWeight={400} sx={{ opacity: 1, mb: 4 }}>
-                            I'm a Software Engineer passionate about building
-                            impactful digital experiences. I specialize in <strong><u>Big Data, Java</u></strong> and
-                            scalable <strong><u>full‑stack</u></strong> applications.
+                        <Typography
+                            variant="h6"
+                            fontWeight={400}
+                            sx={{ opacity: 1, mb: 4 }}
+                        >
+                            I'm a Software Engineer passionate about building impactful
+                            digital experiences. I specialize in{" "}
+                            <strong>
+                                <u>Big Data, Java</u>
+                            </strong>{" "}
+                            and scalable{" "}
+                            <strong>
+                                <u>full‑stack</u>
+                            </strong>{" "}
+                            applications.
                         </Typography>
 
                         <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                            <CustomButton
-                                variant="primary"
-                                onClick={scrollToContact}
-                            >
+                            <CustomButton variant="primary" onClick={scrollToContact}>
                                 Contact Me
                             </CustomButton>
 
@@ -78,19 +89,28 @@ const HomeSection = () => {
                             <CustomButton
                                 variant="secondary"
                                 startIcon={<GitHubIcon />}
-                               // href="https://www.linkedin.com/in/ruiribeiro-dev/"
                                 target="_blank"
                             >
                                 GitHub
                             </CustomButton>
-
-
                         </Stack>
                     </Box>
                 </Stack>
+
+                <Box
+                    mt={{ xs: 2, md: 3 }}
+                    mb={{ xs: 4, md: 8 }}
+                    sx={{
+                        width: "100%",
+                        maxWidth: contentMaxWidth,
+                        mx: "auto",
+                    }}
+                >
+                    <ChatSection maxWidth={contentMaxWidth} />
+                </Box>
             </Container>
         </Box>
     );
 };
 
-export default HomeSection;
+export default Home;

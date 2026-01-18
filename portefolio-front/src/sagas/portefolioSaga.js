@@ -1,4 +1,4 @@
-import {takeLatest, put, call} from "redux-saga/effects";
+import {takeLatest} from "redux-saga/effects";
 import {SUBMIT_CONTACT_FORM} from "../actions/actionTypes";
 import store from "../store";
 import {API_HOST} from "../constants";
@@ -6,7 +6,6 @@ import {setFormErrorMessage, setFormSubmitSuccess} from "../actions/portefolioAc
 
 async function submitContactForm(action) {
 
-    console.log(action.payload)
     try {
 
         const response = await fetch(`${API_HOST}/contact`, {
