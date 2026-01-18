@@ -9,76 +9,83 @@ import {
     Divider,
     useMediaQuery,
     useTheme,
+    InputAdornment,
+    Collapse,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 
-const ChatSection = () => {
+const ChatSection = ({ maxWidth = 800 }) => {
     const [expanded, setExpanded] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
-    const chatContainerRef = useRef(null);
-    const messagesEndRef = useRef(null);
+    const [hasAutoScrolledPage, setHasAutoScrolledPage] = useState(false);
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    // Scroll page so the chat panel is fully visible when it expands
+    const messageListRef = useRef(null);
+    const expandedCardRef = useRef(null);
+
+    // Scroll the page to the chat only once when it first expands
     useEffect(() => {
-        if (expanded && chatContainerRef.current) {
-            chatContainerRef.current.scrollIntoView({
+        if (expanded && !hasAutoScrolledPage && expandedCardRef.current) {
+            expandedCardRef.current.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
+            setHasAutoScrolledPage(true);
         }
-    }, [expanded]);
+    }, [expanded, hasAutoScrolledPage]);
 
-    // Scroll chat messages to the bottom whenever messages change
+    // Keep the message list scrolled to the bottom (inside the card only)
     useEffect(() => {
-        if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [messages, isLoading]);
+        if (!expanded) return;
+        const wrapper = messageListRef.current;
+        if (!wrapper) return;
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+        requestAnimationFrame(() => {
+            wrapper.scrollTop = wrapper.scrollHeight;
+        });
+    }, [expanded, messages, isLoading]);
+
+    const sendMessage = () => {
         const text = inputValue.trim();
-        if (!text) return;
+        if (!text || isLoading) return;
 
         const userMessage = { id: Date.now(), role: "user", content: text };
-
         setMessages((prev) => [...prev, userMessage]);
         setInputValue("");
 
-        if (!expanded) {
-            setExpanded(true);
-        }
+        if (!expanded) setExpanded(true);
 
-        // Mock assistant reply – replace with real RAG / API call later
         setIsLoading(true);
         setTimeout(() => {
             const assistantMessage = {
                 id: Date.now() + 1,
                 role: "assistant",
                 content:
-                    "This is a placeholder answer. Here you’ll see AI‑generated responses about Rui once the backend is connected.",
+                    "This is a placeholder answer. Once your RAG backend is connected, this will be an AI-generated response about Rui.",
             };
             setMessages((prev) => [...prev, assistantMessage]);
             setIsLoading(false);
         }, 900);
     };
 
-    const renderMessages = () => (
-        <Box
-            sx={{
-                flexGrow: 1,
-                overflowY: "auto",
-                pr: 1,
-                pb: 1,
-            }}
-        >
+    const handleSubmit = (e) => {
+        if (e) e.preventDefault();
+        sendMessage();
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            handleSubmit(e);
+        }
+    };
+
+    const MessageList = () => (
+        <>
             {messages.map((msg) => {
                 const isUser = msg.role === "user";
                 return (
@@ -130,133 +137,183 @@ const ChatSection = () => {
                     Thinking…
                 </Box>
             )}
-
-            <div ref={messagesEndRef} />
-        </Box>
+        </>
     );
 
     return (
         <Box
-            ref={chatContainerRef}
             sx={{
                 width: "100%",
                 display: "flex",
-                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
             }}
         >
-            <Paper
-                elevation={3}
-                sx={{
-                    width: "100%",
-                    maxWidth: 800,
-                    borderRadius: 3,
-                    p: { xs: 2, sm: 3 },
-                    bgcolor: theme.palette.mode === "dark" ? "background.paper" : "#f9fafb",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 2,
-                }}
-            >
-                {/* Header */}
-                <Stack direction="row" alignItems="center" spacing={1.5}>
-                    <Box
-                        sx={{
-                            width: 34,
-                            height: 34,
-                            borderRadius: "50%",
-                            bgcolor: "primary.main",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            color: "primary.contrastText",
-                        }}
-                    >
-                        <SmartToyIcon fontSize="small" />
-                    </Box>
-                    <Box>
-                        <Typography variant="subtitle1" fontWeight={600}>
-                            Ask Rui’s AI assistant
-                        </Typography>
-                        <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            sx={{ fontSize: 12 }}
-                        >
-                            Ask about Rui’s experience, tech stack, projects, or background.
-                        </Typography>
-                    </Box>
-                </Stack>
-
-                {expanded && (
-                    <>
-                        <Divider sx={{ my: 1 }} />
-
-                        {/* Messages area */}
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                minHeight: isMobile ? "45vh" : "30vh",
-                                maxHeight: isMobile ? "55vh" : "40vh",
-                            }}
-                        >
-                            {renderMessages()}
-                        </Box>
-                    </>
-                )}
-
-                {/* Input (always visible; looks slimmer before expansion) */}
-                <Box
-                    component="form"
-                    onSubmit={handleSubmit}
+            {/* Collapsed preview */}
+            <Collapse in={!expanded} unmountOnExit sx={{ width: "100%" }}>
+                <Paper
+                    elevation={3}
                     sx={{
-                        mt: expanded ? 1 : 0,
+                        width: "100%",
+                        maxWidth,
+                        borderRadius: 3,
+                        p: { xs: 1.2, sm: 1.5 },
+                        bgcolor:
+                            theme.palette.mode === "dark" ? "background.paper" : "#f9fafb",
+                        mx: "auto",
                     }}
                 >
-                    <TextField
-                        fullWidth
-                        placeholder={
-                            expanded
-                                ? "Type your question about Rui and press Enter…"
-                                : "Ask a question about Rui (experience, skills, etc.)"
-                        }
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        multiline
-                        maxRows={expanded ? 6 : 3}
-                        minRows={expanded ? 2 : 1}
-                        variant="outlined"
-                        size={expanded ? "medium" : "small"}
-                        InputProps={{
-                            sx: {
-                                borderRadius: 999,
-                                bgcolor:
-                                    theme.palette.mode === "dark" ? "background.default" : "white",
-                                alignItems: "flex-end",
-                            },
-                            endAdornment: (
-                                <IconButton
-                                    type="submit"
-                                    color="primary"
-                                    disabled={!inputValue.trim() || isLoading}
-                                    sx={{ ml: 0.5 }}
-                                >
-                                    <SendIcon fontSize="small" />
-                                </IconButton>
-                            ),
-                        }}
-                    />
-                    {!expanded && (
-                        <Typography
-                            variant="caption"
-                            color="text.secondary"
-                            sx={{ mt: 0.5, display: "block" }}
+                    <Typography variant="body2" fontWeight={600} sx={{ mb: 0.6 }}>
+                        Ask Rui’s AI assistant
+                    </Typography>
+
+                    <Box component="form" onSubmit={handleSubmit}>
+                        <TextField
+                            fullWidth
+                            autoComplete="off"
+                            size="small"
+                            placeholder="Ask a quick question about Rui…"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            variant="outlined"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <SmartToyIcon
+                                            fontSize="small"
+                                            sx={{ color: "text.secondary" }}
+                                        />
+                                    </InputAdornment>
+                                ),
+                                endAdornment: (
+                                    <IconButton
+                                        type="submit"
+                                        color="primary"
+                                        disabled={!inputValue.trim() || isLoading}
+                                        sx={{ ml: 0.5 }}
+                                    >
+                                        <SendIcon fontSize="small" />
+                                    </IconButton>
+                                ),
+                                sx: {
+                                    borderRadius: 999,
+                                    bgcolor:
+                                        theme.palette.mode === "dark"
+                                            ? "background.default"
+                                            : "white",
+                                    fontSize: 13,
+                                    py: 0.2,
+                                },
+                            }}
+                        />
+                    </Box>
+                </Paper>
+            </Collapse>
+
+            {/* Expanded chat */}
+            <Collapse in={expanded} unmountOnExit sx={{ width: "100%" }}>
+                <Paper
+                    ref={expandedCardRef}
+                    elevation={3}
+                    sx={{
+                        width: "100%",
+                        maxWidth,
+                        mx: "auto",
+                        maxHeight: "calc(100vh - 120px)",
+                        borderRadius: 3,
+                        p: { xs: 2, sm: 3 },
+                        bgcolor:
+                            theme.palette.mode === "dark" ? "background.paper" : "#f9fafb",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 2,
+                        overflow: "hidden",
+                    }}
+                >
+                    <Stack direction="row" alignItems="center" spacing={1.5}>
+                        <Box
+                            sx={{
+                                width: 34,
+                                height: 34,
+                                borderRadius: "50%",
+                                bgcolor: "primary.main",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "primary.contrastText",
+                            }}
                         >
-                            Press Enter to send and open the chat.
-                        </Typography>
-                    )}
-                </Box>
-            </Paper>
+                            <SmartToyIcon fontSize="small" />
+                        </Box>
+                        <Box>
+                            <Typography variant="subtitle1" fontWeight={600}>
+                                Ask Rui’s AI assistant
+                            </Typography>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{ fontSize: 12 }}
+                            >
+                                Ask about Rui’s experience, tech stack, projects, or background.
+                            </Typography>
+                        </Box>
+                    </Stack>
+
+                    <Divider sx={{ my: 1 }} />
+
+                    <Box
+                        ref={messageListRef}
+                        sx={{
+                            flex: 1,
+                            minHeight: isMobile ? 240 : 280,
+                            overflowY: "auto",
+                            pr: 1,
+                            pb: 1,
+                        }}
+                    >
+                        <MessageList />
+                    </Box>
+
+                    <Box component="form" onSubmit={handleSubmit} sx={{ pt: 0.5 }}>
+                        <TextField
+                            fullWidth
+                            autoComplete="off"
+                            placeholder="Type your question about Rui and press Enter…"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            multiline
+                            minRows={1}
+                            maxRows={4}
+                            variant="outlined"
+                            size="small"
+                            onKeyDown={handleKeyDown}
+                            InputProps={{
+                                sx: {
+                                    borderRadius: 999,
+                                    bgcolor:
+                                        theme.palette.mode === "dark"
+                                            ? "background.default"
+                                            : "white",
+                                    alignItems: "center",
+                                    px: 1.5,
+                                    py: 0.4,
+                                    fontSize: 14,
+                                },
+                                endAdornment: (
+                                    <IconButton
+                                        type="submit"
+                                        color="primary"
+                                        disabled={!inputValue.trim() || isLoading}
+                                        sx={{ ml: 0.5 }}
+                                    >
+                                        <SendIcon fontSize="small" />
+                                    </IconButton>
+                                ),
+                            }}
+                        />
+                    </Box>
+                </Paper>
+            </Collapse>
         </Box>
     );
 };

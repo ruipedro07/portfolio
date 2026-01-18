@@ -3,15 +3,15 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CustomButton from "./components/custombutton";
-import ChatSection from "./components/chat"; // <-- add this
+import ChatSection from "./components/chat";
 
 const Home = () => {
     const scrollToContact = () => {
         const el = document.getElementById("contact");
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
+        if (el) el.scrollIntoView({ behavior: "smooth" });
     };
+
+    const contentMaxWidth = 860; // keeps hero + chat the same width
 
     return (
         <Box
@@ -20,7 +20,7 @@ const Home = () => {
                 display: "flex",
                 alignItems: "center",
                 width: "100%",
-                pt: { xs: 0, md: 0 },
+                pt: { xs: 0, md: 10 },
             }}
         >
             <Container maxWidth="lg">
@@ -29,6 +29,11 @@ const Home = () => {
                     spacing={{ xs: 2, md: 5 }}
                     alignItems="center"
                     justifyContent="center"
+                    sx={{
+                        width: "100%",
+                        maxWidth: contentMaxWidth,
+                        mx: "auto",
+                    }}
                 >
                     {/* Picture */}
                     <Box
@@ -84,7 +89,6 @@ const Home = () => {
                             <CustomButton
                                 variant="secondary"
                                 startIcon={<GitHubIcon />}
-                                // href="https://github.com/your-username"
                                 target="_blank"
                             >
                                 GitHub
@@ -93,9 +97,16 @@ const Home = () => {
                     </Box>
                 </Stack>
 
-                {/* Chat section – appears below hero, expands after first question */}
-                <Box mt={{ xs: 4, md: 6 }} mb={{ xs: 4, md: 8 }}>
-                    <ChatSection />
+                <Box
+                    mt={{ xs: 2, md: 3 }}
+                    mb={{ xs: 4, md: 8 }}
+                    sx={{
+                        width: "100%",
+                        maxWidth: contentMaxWidth,
+                        mx: "auto",
+                    }}
+                >
+                    <ChatSection maxWidth={contentMaxWidth} />
                 </Box>
             </Container>
         </Box>
