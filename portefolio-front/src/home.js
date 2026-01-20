@@ -86,13 +86,13 @@ const Home = () => {
                                 LinkedIn
                             </CustomButton>
 
-                            <CustomButton
+                            {/*<CustomButton
                                 variant="secondary"
                                 startIcon={<GitHubIcon />}
                                 target="_blank"
                             >
                                 GitHub
-                            </CustomButton>
+                            </CustomButton>*/}
                         </Stack>
                     </Box>
                 </Stack>

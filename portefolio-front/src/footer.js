@@ -50,12 +50,12 @@ const Footer = () => {
                         />
 
 
-                        <CustomButton
+                        {/*<CustomButton
                             variant="secondary"
                             startIcon={<GitHubIcon/>}
                             // href="https://www.linkedin.com/in/ruiribeiro-dev/"
                             target="_blank"
-                        />
+                        />*/}
 
 
                     </Box>

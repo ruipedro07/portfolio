@@ -142,7 +142,7 @@ export default function Navbar() {
                     })}
 
                     {/* Language dropdown */}
-                    <Button
+                    {/*<Button
                         onClick={handleLangMenuOpen}
                         endIcon={
                             <KeyboardArrowDownIcon
@@ -170,9 +170,9 @@ export default function Navbar() {
                         }}
                     >
                         {activeLanguage}
-                    </Button>
+                    </Button> */}
 
-                    <Menu
+                    {/* <Menu
                         anchorEl={langAnchor}
                         open={isLangMenuOpen}
                         onClose={() => handleLangMenuClose(null)}
@@ -205,7 +205,7 @@ export default function Navbar() {
                                 {lang}
                             </MenuItem>
                         ))}
-                    </Menu>
+                    </Menu> */}
                 </Box>
             </AppBar>
         );
@@ -246,7 +246,7 @@ export default function Navbar() {
                         );
                     })}
 
-                    <Box sx={{mt: 2, display: "flex", gap: 1}}>
+                    {/*<Box sx={{mt: 2, display: "flex", gap: 1}}>
                         {LANGUAGES.map((lang) => (
                             <Button
                                 key={lang}
@@ -259,7 +259,7 @@ export default function Navbar() {
                                 {lang}
                             </Button>
                         ))}
-                    </Box>
+                    </Box>*/}
                 </Box>
             </Drawer>
         </>

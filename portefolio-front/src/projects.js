@@ -19,7 +19,7 @@ const projectsData = [
         description:
             "Developed a RAG-based system to optimize technical knowledge retrieval in enterprise support environments. Built data ingestion and indexing pipelines using Spring Boot / Spring AI, Qdrant, and SQL Server, with integrations to Confluence and Control-M. The project focuses on scalable data processing, vector search optimization, and performance evaluation of retrieval configurations.",
         image: "/images/chat.png",
-        techStack: ["RAG", "Spring AI", "LLMs", "Qdrant", "React", "MS SQL Server"],
+        techStack: ["RAG", "Spring AI", "LLMs", "Qdrant", "React", "SQL", "Webhooks"],
         url: "https://recipp.ipp.pt/entities/publication/1bb049bb-97d1-48db-8202-57527a0a50e3",
         status: "Finished"
     },
