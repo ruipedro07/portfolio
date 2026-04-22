@@ -45,6 +45,7 @@ const Home = () => {
                             height: { xs: 150, md: 200 },
                             borderRadius: "50%",
                             objectFit: "cover",
+                            objectPosition: "center 30%",
                             border: 2,
                             borderColor: "white",
                         }}
