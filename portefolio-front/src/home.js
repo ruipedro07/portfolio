@@ -38,7 +38,7 @@ const Home = () => {
                     {/* Picture */}
                     <Box
                         component="img"
-                        src="/foto_minha_2022.jpg"
+                        src="/foto_minha_recente.jpg"
                         alt="foto-rui"
                         sx={{
                             width: { xs: 150, md: 200 },
