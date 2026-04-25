@@ -4,26 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="improved chat box">
-      <change afterPath="$PROJECT_DIR$/../email/backend/model/chatRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/backend/service/chatService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/chatActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/chatReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/chatSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../email/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../email/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/education.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rootSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/portefolioSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/portefolioSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skills.js" afterDir="false" />
-    </list>
-    <list id="d3a5d341-c9ab-4267-b1a4-f3a96821f1ab" name="not commit" comment="">
+    <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="photo adjusted">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list id="d3a5d341-c9ab-4267-b1a4-f3a96821f1ab" name="not commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,34 +39,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "chatbot-rag",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/12659/Documents/portefolio/portefolio-front/src/sagas",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.npm start.executor": "Run",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.4.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/12659/Documents/portefolio/portefolio-front/src/sagas&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.npm start.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.4.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\12659\Documents\portefolio\portefolio-front\src\sagas" />
@@ -157,6 +141,10 @@
       <workItem from="1768652325260" duration="21008000" />
       <workItem from="1768745076410" duration="1315000" />
       <workItem from="1768761662237" duration="1199000" />
+      <workItem from="1768842526926" duration="1426000" />
+      <workItem from="1768919412715" duration="3265000" />
+      <workItem from="1769266475355" duration="100000" />
+      <workItem from="1776895501566" duration="532000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />
@@ -486,7 +474,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768768680594</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="new profile photo">
+      <option name="closed" value="true" />
+      <created>1776895633617</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1776895633617</updated>
+    </task>
+    <task id="LOCAL-00043" summary="photo adjusted">
+      <option name="closed" value="true" />
+      <created>1776896048008</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1776896048008</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,8 +508,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="skills adjusted" />
-    <MESSAGE value="skills chips adjusted" />
     <MESSAGE value="animations" />
     <MESSAGE value="some code refactor" />
     <MESSAGE value="dev progress indicator" />
@@ -529,7 +531,9 @@
     <MESSAGE value="link icon in the education section" />
     <MESSAGE value="start of chat AI RAG" />
     <MESSAGE value="improved chat box" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved chat box" />
+    <MESSAGE value="new profile photo" />
+    <MESSAGE value="photo adjusted" />
+    <option name="LAST_COMMIT_MESSAGE" value="photo adjusted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
