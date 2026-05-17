@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9ef41a47-7f58-4400-a12c-458c60d513e1" name="Changes" comment="photo adjusted">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.js" afterDir="false" />
     </list>
     <list id="d3a5d341-c9ab-4267-b1a4-f3a96821f1ab" name="not commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,6 +146,8 @@
       <workItem from="1768919412715" duration="3265000" />
       <workItem from="1769266475355" duration="100000" />
       <workItem from="1776895501566" duration="532000" />
+      <workItem from="1777228869045" duration="380000" />
+      <workItem from="1779020554760" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile">
       <option name="closed" value="true" />

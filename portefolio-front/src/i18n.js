@@ -13,13 +13,10 @@ const resources = {
             Experience: "Experience",
             Education: "Education",
             Contact: "Contact",
-            welcome: "Welcome! I'm a software developer specializing in React, Three.js, and backend services.",
-            aboutMe: "I build performant, accessible web apps with a focus on developer experience and product impact.",
-            contactMe: "Reach me at contact@ruiribeiro.dev",
             Language: "Language",
         },
     },
-    pt: {
+   /* pt: {
         translation: {
             Home: "Início",
             About: "Sobre",
@@ -28,12 +25,9 @@ const resources = {
             Experience: "Experiência",
             Contact: "Contacto",
             Education: "Educação",
-            welcome: "Bem-vindo! Sou um desenvolvedor especializado em React, Three.js e serviços backend.",
-            aboutMe: "Crio aplicações web rápidas e acessíveis com foco na experiência do programador e impacto do produto.",
-            contactMe: "Contacte-me em contact@ruiribeiro.dev",
             Language: "Linguagem",
         },
-    },
+    },*/
 };
 
 i18n
